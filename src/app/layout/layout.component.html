@@ -1,9 +1,9 @@
 <p>layout works!</p>
-<button type="button" class="btn btn-primary">Login</button>
-<button type="button" class="btn btn-secondary">Registration</button>
-<button type="button" class="btn btn-success">Home</button>
-<button type="button" class="btn btn-danger">My ideas</button>
-<button type="button" class="btn btn-warning">view all ideas</button>
-<button type="button" class="btn btn-info">view idea</button>
+<button type="button" [routerLink]="['/auth/login']" class="btn btn-primary">Login</button>
+<button type="button" [routerLink]="['/auth/registration']" class="btn btn-secondary">Registration</button>
+<button type="button" [routerLink]="['/home']" class="btn btn-success">Home</button>
+<button type="button" [routerLink]="['/idea/my-ideas']" class="btn btn-danger">My ideas</button>
+<button type="button" [routerLink]="['/idea/view-all-ideas']" class="btn btn-warning">view all ideas</button>
+<button type="button" [routerLink]="['/idea/view-idea']" class="btn btn-info">view idea</button>
 
 <router-outlet></router-outlet>
