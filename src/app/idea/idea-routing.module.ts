@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MyIdeasComponent } from './my-ideas/my-ideas.component';
+import { ViewAllIdeasComponent } from './view-all-ideas/view-all-ideas.component';
+import { ViewIdeaComponent } from './view-idea/view-idea.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'my-ideas',
+    component: MyIdeasComponent
+  },
+  {
+    path: 'view-all-ideas',
+    component: ViewAllIdeasComponent
+  },
+  {
+    path: 'view-idea',
+    component: ViewIdeaComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
