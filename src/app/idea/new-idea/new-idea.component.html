@@ -5,19 +5,46 @@
   <div class="card-body">
     <form>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">User Name</label>
+        <label for="exampleInputEmail1" class="form-label">Idea Name</label>
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
+
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Benefits</label>
+            <div class="card">
+
+              <div class="card-body">
+                <h5 class="card-title">Tittle</h5>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <p class="card-text">Description</p>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Department</label>
         <input type="password" class="form-control" id="exampleInputPassword1">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="button" class="btn btn-primary" [routerLink]="['/home']">Submit</button>
-      <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/registration']">Reset</button>
+
+
+      <button type="button" class="btn btn-primary" [routerLink]="['/home']">Submit Idea</button>
+      <!-- <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/registration']">Reset</button> -->
     </form>
   </div>
 </div>
