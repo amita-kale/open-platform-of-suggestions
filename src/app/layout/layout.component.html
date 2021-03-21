@@ -1,9 +1,17 @@
-<p>layout works!</p>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Open Platform of Suggestions</a>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 <!-- <button type="button" [routerLink]="['/auth/login']" class="btn btn-primary">Login</button>
 <button type="button" [routerLink]="['/auth/registration']" class="btn btn-secondary">Registration</button>
 <button type="button" [routerLink]="['/home']" class="btn btn-success">Home</button>
 <button type="button" [routerLink]="['/idea/my-ideas']" class="btn btn-danger">My ideas</button>
 <button type="button" [routerLink]="['/idea/view-all-ideas']" class="btn btn-warning">view all ideas</button>
 <button type="button" [routerLink]="['/idea/view-idea']" class="btn btn-info">view idea</button> -->
-
-<router-outlet></router-outlet>
