@@ -4,7 +4,25 @@
   </div>
 </nav>
 <div class="row">
-  <div class="col-2"></div>
+  <div class="col-1">
+    <div class="row bg-light">
+      <div class="border col-12 p-4 text-center cursor-pointer bg-primary" [routerLink]="['/home']">
+        Home
+      </div>
+      <div class="border col-12 p-4 text-center cursor-pointer" [routerLink]="['/idea/my-ideas']">
+        My Idea
+      </div>
+      <div class="border col-12 p-4 text-center cursor-pointer" [routerLink]="['/idea/new-idea']">
+        New Idea
+      </div>
+      <div class="border col-12 p-4 text-center cursor-pointer">
+        Pending for Acceptance
+      </div>
+      <div class="border col-12 p-4 text-center cursor-pointer">
+        Rating
+      </div>
+    </div>
+  </div>
   <div class="col">
     <router-outlet></router-outlet>
   </div>
