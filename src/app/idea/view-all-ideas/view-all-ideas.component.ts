@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StudentideaService } from '../studentidea.service';
 
 @Component({
   selector: 'app-view-all-ideas',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAllIdeasComponent implements OnInit {
 
-  constructor() { }
+
+  studentideas =
+    {
+      // title: '',
+      // description: '',
+      // benefits: '',
+      // department: '',
+    }
+
+
+  constructor(private studentideaService: StudentideaService, private router: Router) { }
 
   ngOnInit(): void {
+    this.studentideas = this.studentideaService.getStudents();
   }
 
 }

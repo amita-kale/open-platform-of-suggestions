@@ -1,1 +1,15 @@
-<p>view-all-ideas works!</p>
+<table border="1" align="center">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Benefites</th>
+    <th>Department</th>
+  </tr>
+  <tr *ngFor="let item of studentideas,let i=index">
+    <td>{{item.title}}</td>
+    <td>{{item.description}}</td>
+    <td>{{item.benefites}}</td>
+    <td>{{item.department}}</td>
+
+  </tr>
+</table>

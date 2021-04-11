@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MyIdeasComponent } from './my-ideas/my-ideas.component';
+import { MyIdeaComponent } from './my-idea/my-idea.component';
 import { NewIdeaComponent } from './new-idea/new-idea.component';
 import { ViewAllIdeasComponent } from './view-all-ideas/view-all-ideas.component';
 import { ViewIdeaComponent } from './view-idea/view-idea.component';
 
 const routes: Routes = [
   {
-    path: 'my-ideas',
-    component: MyIdeasComponent
+    path: 'my-idea',
+    component: MyIdeaComponent
   },
   {
     path: 'view-all-ideas',
