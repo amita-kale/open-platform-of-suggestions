@@ -1,0 +1,61 @@
+<div class="card mt-2">
+  <div class="card-header card-title">
+    Create New Idea
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Idea Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          [(ngModel)]="studentidea.title" name="title">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.description"
+          name="description">></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Benefites</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.benefites"
+          name="benefites">></textarea>
+      </div>
+
+      <!-- <div class="card">
+
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Benefits</label>
+
+            
+             <div class="card">
+
+               <div class="card-body">
+                <h5 class="card-title">Tittle</h5>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <p class="card-text">Description</p>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <button type="button" class="btn btn-primary" style="margin-top: 15px">Add</button>
+
+              </div> 
+             </div> 
+  </div>
+  </div>
+</div> -->
+
+
+
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Department</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.department"
+          name="department">
+      </div>
+
+
+      <button type="button" class="btn btn-primary" (click)="submitClicked()">Submit Idea</button>
+      <!-- <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/registration']">Reset</button> -->
+    </form>
+  </div>
+</div>
