@@ -21,7 +21,12 @@ const routes: Routes = [
   {
     path: 'view-idea',
     component: ViewIdeaComponent
-  }
+  },
+
+  {
+    path: "new-idea/:ui",//ui is random variable you can take anything...and : for make this variable dynamic.
+    component: NewIdeaComponent
+  },
 ];
 
 @NgModule({

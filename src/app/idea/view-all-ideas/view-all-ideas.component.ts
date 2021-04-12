@@ -25,4 +25,14 @@ export class ViewAllIdeasComponent implements OnInit {
     this.studentideas = this.studentideaService.getStudents();
   }
 
+  editFunction(i, item) {
+    console.log("index:", i, item);
+    this.router.navigate(['idea/new-idea/' + i]);
+  }
+  deleteFunction(i) {
+    console.log("delete call");
+    this.studentideaService.delStudents(i);
+
+  }
+
 }
