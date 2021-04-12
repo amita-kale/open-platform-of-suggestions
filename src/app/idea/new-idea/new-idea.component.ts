@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StudentideaService } from '../studentidea.service';
 
 
@@ -11,7 +11,7 @@ import { StudentideaService } from '../studentidea.service';
   styleUrls: ['./new-idea.component.css']
 })
 export class NewIdeaComponent implements OnInit {
-
+  isEdit = false;
   studentidea =
     {
       title: '',
@@ -22,9 +22,19 @@ export class NewIdeaComponent implements OnInit {
 
 
 
-  constructor(private studentideaService: StudentideaService, private router: Router) { }
+  constructor(private studentideaService: StudentideaService, private router: Router, private routeParam: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if (this.routeParam.snapshot.params.ui) {
+      this.isEdit = true;
+      const stud = this.studentideaService.getSpecificStudentByIndex(this.routeParam.snapshot.params.ui);
+      this.studentidea = {
+        title: stud.title,
+        description: stud.description,
+        benefites: stud.benefites,
+        department: stud.department,
+      };
+    }
   }
   submitClicked() {
     const studentidea =
@@ -35,10 +45,17 @@ export class NewIdeaComponent implements OnInit {
       department: this.studentidea.department,
     }
 
-    this.studentideaService.addidea(studentidea);
-    this.router.navigate(['view-all-ideas']);
+    if (this.isEdit == false) {
+      this.studentideaService.addidea(studentidea);
 
 
+    } else {
+      this.studentideaService.updateStudent(this.routeParam.snapshot.params.ui, studentidea);
+
+    }
+
+
+    this.router.navigate(['./idea/view-all-ideas']);
 
   }
 }

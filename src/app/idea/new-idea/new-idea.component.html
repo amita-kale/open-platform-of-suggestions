@@ -12,7 +12,7 @@
 
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.description"
+        <textarea class="form-control" id="exampleFormControlTextarea" rows="3" [(ngModel)]="studentidea.description"
           name="description">></textarea>
       </div>
 
@@ -49,12 +49,13 @@
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Department</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.department"
+        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.department"
           name="department">
       </div>
 
 
-      <button type="button" class="btn btn-primary" (click)="submitClicked()">Submit Idea</button>
+      <button type="button" class="btn btn-primary" (click)="submitClicked()">
+        {{isEdit==true ? 'update' : 'submit'}}</button>
       <!-- <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/registration']">Reset</button> -->
     </form>
   </div>

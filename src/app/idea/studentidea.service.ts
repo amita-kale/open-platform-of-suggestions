@@ -17,4 +17,15 @@ export class StudentideaService {
     return this.ideas;
   }
 
+  updateStudent(index, student) {
+    this.ideas[index] = student;
+
+  }
+  getSpecificStudentByIndex(index) {
+    return this.ideas[index];
+  }
+
+  delStudents(i) {
+    this.ideas.splice(i, 1);
+  }
 }
