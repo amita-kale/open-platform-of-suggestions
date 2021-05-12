@@ -15,5 +15,7 @@ export class DepartmentService {
   getDepartmentInfo() {
     return this.departmentinfo;
   }
-
+  delDepartment(i) {
+    this.departmentinfo.splice(i, 1);
+  }
 }

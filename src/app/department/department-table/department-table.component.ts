@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DepartmentService } from '../department.service';
 
 @Component({
@@ -13,10 +14,19 @@ export class DepartmentTableComponent implements OnInit {
     // departmenthead: ''
   }
 
-  constructor(private departmentService: DepartmentService) { }
+  constructor(private departmentService: DepartmentService, private router: Router) { }
 
   ngOnInit(): void {
     this.studentdata = this.departmentService.getDepartmentInfo();
+  }
+
+  deleteFunction(i) {
+    this.departmentService.delDepartment(i);
+  }
+
+  editFunction(i, item) {
+    console.log("index:", i, item);
+    this.router.navigate(['department/form/' + i]);
   }
 
 }

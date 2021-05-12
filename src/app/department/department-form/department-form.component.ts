@@ -8,7 +8,8 @@ import { DepartmentService } from '../department.service';
   styleUrls: ['./department-form.component.css']
 })
 export class DepartmentFormComponent implements OnInit {
-
+  isEdit = false;
+  index = 1;
   department = {
     name: '',
     head: ''
@@ -21,6 +22,8 @@ export class DepartmentFormComponent implements OnInit {
   }
 
   submitClicked() {
+    if (this.isEdit === false) {
+    }
     const department = {
       name: this.department.name,
       head: this.department.head
