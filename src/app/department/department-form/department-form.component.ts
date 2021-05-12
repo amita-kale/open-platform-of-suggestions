@@ -18,4 +18,9 @@ export class DepartmentFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  submitClicked() {
+    console.log("submit clicked");
+
+  }
+
 }
