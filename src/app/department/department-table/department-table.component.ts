@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepartmentTableComponent implements OnInit {
 
+  studentdata = {
+    departmentname: '',
+    departmenthead: ''
+  }
+
   constructor() { }
 
   ngOnInit(): void {
