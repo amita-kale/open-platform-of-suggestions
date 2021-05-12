@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-department-table',
@@ -8,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class DepartmentTableComponent implements OnInit {
 
   studentdata = {
-    departmentname: 'hi',
-    departmenthead: 'helo'
+    // departmentname: '',
+    // departmenthead: ''
   }
 
-  constructor() { }
+  constructor(private departmentService: DepartmentService) { }
 
   ngOnInit(): void {
+    this.studentdata = this.departmentService.getDepartmentInfo();
   }
 
 }
