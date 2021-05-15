@@ -9,15 +9,15 @@ import { DepartmentService } from '../department.service';
 })
 export class DepartmentTableComponent implements OnInit {
 
-  studentdata = {
-    // departmentname: '',
-    // departmenthead: ''
-  }
+  studentdata = [];
+
 
   constructor(private departmentService: DepartmentService, private router: Router) { }
 
   ngOnInit(): void {
     this.studentdata = this.departmentService.getDepartmentInfo();
+    console.log(this.studentdata);
+
   }
 
   deleteFunction(i) {

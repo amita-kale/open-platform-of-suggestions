@@ -18,4 +18,11 @@ export class DepartmentService {
   delDepartment(i) {
     this.departmentinfo.splice(i, 1);
   }
+  updateStudent(index, student) {
+    this.departmentinfo[index] = student;
+
+  }
+  getSpecificStudentByIndex(index) {
+    return this.departmentinfo[index];
+  }
 }
