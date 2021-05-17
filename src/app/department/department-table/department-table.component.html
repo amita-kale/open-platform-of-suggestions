@@ -1,0 +1,25 @@
+<p>department-table </p>
+<button type="button" class="btn btn-primary" [routerLink]="['/department/form']">add New</button>
+
+
+
+
+<table border="1" align="center">
+  <tr>
+    <th>Sr.No.</th>
+    <th>Department Name</th>
+    <th>Department Head</th>
+    <th>Action</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let item of studentdata,let i=index">
+    <td>{{i}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.head}}</td>
+
+    <td><button (click)="editFunction(i,item)">Edit</button></td>
+    <td><button (click)="deleteFunction(i)">Delete</button></td>
+
+
+  </tr>
+</table>

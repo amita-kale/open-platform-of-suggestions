@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '',
@@ -14,22 +14,36 @@ const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+        loadChildren: () =>
+          import('./home/home.module').then((m) => m.HomeModule),
       },
       {
         path: 'idea',
-        loadChildren: () => import('./idea/idea.module').then(m => m.IdeaModule)
-      }
-    ]
+        loadChildren: () =>
+          import('./idea/idea.module').then((m) => m.IdeaModule),
+      },
+      {
+        path: 'department',
+        loadChildren: () =>
+          import('./department/department.module').then(
+            (m) => m.DepartmentModule
+          ),
+      },
+      {
+        path: 'rating',
+        loadChildren: () =>
+          import('./rating/rating.module').then((m) => m.RatingModule),
+      },
+    ],
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
-  }
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
