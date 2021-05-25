@@ -12,6 +12,7 @@ export class ViewIdeaComponent implements OnInit {
     title: '',
     description: '',
     benefits: '',
+    createdon: null,
     department: '',
     authorname: '',
   };
@@ -26,6 +27,6 @@ export class ViewIdeaComponent implements OnInit {
     this.ideainfo = this.studentideaService.getSpecificStudentByIndex(
       this.route.snapshot.params.id
     );
-    console.log('aniket ', this.ideainfo);
+    console.log(this.ideainfo);
   }
 }

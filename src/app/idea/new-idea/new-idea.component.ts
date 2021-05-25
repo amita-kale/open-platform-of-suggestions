@@ -14,6 +14,7 @@ export class NewIdeaComponent implements OnInit {
     description: '',
     benefits: '',
     department: '',
+    createdon: null,
     authorname: '',
   };
 
@@ -34,6 +35,7 @@ export class NewIdeaComponent implements OnInit {
         description: stud.description,
         benefits: stud.benefits,
         department: stud.department,
+        createdon: stud.createdon,
         authorname: stud.authorname,
       };
     }
@@ -44,6 +46,7 @@ export class NewIdeaComponent implements OnInit {
       description: this.studentidea.description,
       benefits: this.studentidea.benefits,
       department: this.studentidea.department,
+      createdon: this.studentidea.createdon,
       authorname: this.studentidea.authorname,
     };
 
