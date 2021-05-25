@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StudentideaService {
-
-
   ideas = [];
 
-  constructor() { }
+  constructor() {}
 
   addidea(studentidea) {
-    this.ideas.push(studentidea)
+    this.ideas.push(studentidea);
   }
   getStudents() {
     return this.ideas;
@@ -19,7 +17,6 @@ export class StudentideaService {
 
   updateStudent(index, student) {
     this.ideas[index] = student;
-
   }
   getSpecificStudentByIndex(index) {
     return this.ideas[index];

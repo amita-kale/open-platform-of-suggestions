@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'view-idea',
     component: ViewIdeaComponent,
   },
+  {
+    path: 'view-idea/:id',
+    component: ViewIdeaComponent
+  },
 
   {
     path: 'new-idea/:ui', //ui is random variable you can take anything...and : for make this variable dynamic.
@@ -38,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class IdeaRoutingModule {}
+export class IdeaRoutingModule { }
