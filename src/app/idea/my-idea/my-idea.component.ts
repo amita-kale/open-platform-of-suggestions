@@ -9,6 +9,7 @@ import { StudentideaService } from '../studentidea.service';
 })
 export class MyIdeaComponent implements OnInit {
   studentideas = [];
+  ideas = [];
 
   constructor(
     private studentideaService: StudentideaService,
@@ -17,10 +18,22 @@ export class MyIdeaComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentideas = this.studentideaService.getStudents();
+    this.ideas = this.studentideas;
   }
 
   viewallideadetail(i, item) {
     console.log('index:', i, item);
     this.router.navigate(['/idea/view-idea/' + i]);
+  }
+
+  statusClicked(status) {
+    console.log(status);
+
+    this.studentideas = this.ideas.filter((ele) => {
+      console.log(ele.title);
+
+      return ele.status == status;
+    });
+    console.log(this.studentideas);
   }
 }

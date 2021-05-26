@@ -9,6 +9,7 @@ import { StudentideaService } from '../studentidea.service';
 })
 export class ViewAllIdeasComponent implements OnInit {
   studentideas = [];
+  ideas = [];
   //{
   // title: '',
   // description: '',
@@ -23,6 +24,7 @@ export class ViewAllIdeasComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentideas = this.studentideaService.getStudents();
+    this.ideas = this.studentideas;
   }
 
   viewallideadetail(i, item) {
@@ -33,5 +35,16 @@ export class ViewAllIdeasComponent implements OnInit {
   deleteFunction(i) {
     console.log('delete call');
     this.studentideaService.delStudents(i);
+  }
+
+  statusClicked(status) {
+    console.log(status);
+
+    this.studentideas = this.ideas.filter((ele) => {
+      console.log(ele.title);
+
+      return ele.status == status;
+    });
+    console.log(this.studentideas);
   }
 }

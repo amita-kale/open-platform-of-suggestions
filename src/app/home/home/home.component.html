@@ -5,16 +5,16 @@
 </div>
 <div class="row mt-3 mx-0 text-center">
   <div class="col-3">
-    <div class="border p-5 cursor-pointer under-evaluation">Under Evaluation</div>
+    <div class="border p-5 cursor-pointer under-evaluation" (click)="statusClicked('Under Evaluation')">Under Evaluation</div>
   </div>
   <div class="col-3">
-    <div class="border p-5 cursor-pointer accepted-for-implementation">Accepted for Implementation</div>
+    <div class="border p-5 cursor-pointer accepted-for-implementation" (click)="statusClicked('Accepted for Implementation')">Accepted for Implementation</div>
   </div>
   <div class="col-3">
-    <div class="border p-5 cursor-pointer idea-already-exist">Idea Already Exist</div>
+    <div class="border p-5 cursor-pointer  idea-already-exist" (click)="statusClicked('Idea Already Exist')">Idea Already Exist</div>
   </div>
   <div class="col-3">
-    <div class="border p-5 cursor-pointer implemented">Implemented</div>
+    <div class="border p-5 cursor-pointer  implemented" (click)="statusClicked('Implemented')">Implemented</div>
   </div>
 </div>
 
