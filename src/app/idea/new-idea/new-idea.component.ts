@@ -12,8 +12,9 @@ export class NewIdeaComponent implements OnInit {
   studentidea = {
     title: '',
     description: '',
-    benefites: '',
+    benefits: '',
     department: '',
+    createdon: null,
     authorname: '',
   };
 
@@ -32,19 +33,20 @@ export class NewIdeaComponent implements OnInit {
       this.studentidea = {
         title: stud.title,
         description: stud.description,
-        benefites: stud.benefites,
+        benefits: stud.benefits,
         department: stud.department,
+        createdon: stud.createdon,
         authorname: stud.authorname,
       };
     }
   }
   submitClicked() {
     const studentidea = {
-      // title: this.studentidea.title,
-      // description: this.studentidea.description,
-      // benefites: this.studentidea.benefites,
-      // department: this.studentidea.department,
       title: this.studentidea.title,
+      description: this.studentidea.description,
+      benefits: this.studentidea.benefits,
+      department: this.studentidea.department,
+      createdon: this.studentidea.createdon,
       authorname: this.studentidea.authorname,
     };
 
