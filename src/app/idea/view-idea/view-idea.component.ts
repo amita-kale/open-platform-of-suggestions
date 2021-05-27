@@ -8,6 +8,8 @@ import { StudentideaService } from '../studentidea.service';
   styleUrls: ['./view-idea.component.css'],
 })
 export class ViewIdeaComponent implements OnInit {
+  rejectvar = false;
+
   ideainfo = {
     title: '',
     description: '',
@@ -28,5 +30,10 @@ export class ViewIdeaComponent implements OnInit {
       this.route.snapshot.params.id
     );
     console.log(this.ideainfo);
+  }
+
+  rejectClicked() {
+    this.rejectvar = true;
+    console.log(this.rejectvar);
   }
 }

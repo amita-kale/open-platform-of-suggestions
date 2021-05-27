@@ -47,11 +47,14 @@
 </div>
 <br>
 <hr>
-<div>
+
+  <!-- Reason:<input type="text" class="form-control" id="head" aria-describedby="emailHelp" name="dept"
+    placeholder="If Idea Is Rejected"><br> -->
+  <button type="button" class="btn btn-primary">accept</button>&nbsp;
+  <button type="button" class="btn btn-primary" (click)="rejectClicked()">Reject</button><br>
+<div *ngIf="rejectvar === true">
   Reason:<input type="text" class="form-control" id="head" aria-describedby="emailHelp" name="dept"
     placeholder="If Idea Is Rejected"><br>
-  <button type="button" class="btn btn-primary">accept</button>&nbsp;
-  <button type="button" class="btn btn-primary">Reject</button>
 </div>
 <hr>
 <br>
