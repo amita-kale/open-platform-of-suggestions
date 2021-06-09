@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 .cursor-pointer {
-  cursor: pointer !important
+  cursor: pointer !important;
 }
 
 .under-evaluation {
@@ -11,8 +11,12 @@
   background-color: #8c84e5;
 }
 .idea-already-exist {
-  background-color: #46db56;;
+  background-color: #46db56;
 }
 .implemented {
   background-color: #d832e7;
+}
+.thumbs-hover:hover {
+  color: white;
+  background-color: blue;
 }

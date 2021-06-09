@@ -1,9 +1,64 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "ideas": [
+    {
+      "id": 1,
+      "title": "idea Under Evaluation 1",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": "Aniket kale",
+      "status": "Under Evaluation"
+    },
+    {
+      "id": 2,
+      "title": "idea Under Evaluation 2",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": "Aniket kale",
+      "status": "Under Evaluation"
+    },
+    {
+      "id": 3,
+      "title": "idea Accepted for Implementation",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": "Aniket kale",
+      "status": "Accepted for Implementation"
+    },
+    {
+      "id": 4,
+      "title": "idea Idea Already Exist",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": "Aniket kale",
+      "status": "Idea Already Exist"
+    },
+    {
+      "id": 5,
+      "title": "idea Implemented 1",
+      "description": "a",
+      "benefits": "b",
+      "department": "c",
+      "createdon": 21,
+      "authorname": "Aniket kale",
+      "status": "Implemented"
+    },
+    {
+     "id": 6,
+     "title": "idea Implemented 2",
+     "description": "",
+     "benefits": "",
+     "department": "",
+     "createdon": null,
+     "authorname": "Aniket kale",
+     "status": "Implemented"
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -61,7 +62,15 @@ export class StudentideaService {
     },
   ];
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
+
+  getIdea() {
+    return this.httpClient.get('http://localhost:3000/ideas/');
+  }
+
+  getIdeaById(id: number) {
+    return this.httpClient.get('http://localhost:3000/ideas/' + id);
+  }
 
   addidea(studentidea) {
     this.ideas.push(studentidea);
