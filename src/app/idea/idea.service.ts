@@ -72,6 +72,10 @@ export class ideaService {
     return this.httpClient.get('http://localhost:3000/ideas/' + id);
   }
 
+  postIdea(studentidea) {
+    return this.httpClient.post('http://localhost:3000/ideas/', studentidea);
+  }
+
   addidea(studentidea) {
     this.ideas.push(studentidea);
   }
