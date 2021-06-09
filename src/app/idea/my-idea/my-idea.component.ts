@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentideaService } from '../studentidea.service';
+import { ideaService } from '../idea.service';
 
 @Component({
   selector: 'app-my-idea',
@@ -11,13 +11,10 @@ export class MyIdeaComponent implements OnInit {
   studentideas = [];
   ideas = [];
 
-  constructor(
-    private studentideaService: StudentideaService,
-    private router: Router
-  ) {}
+  constructor(private ideaservice: ideaService, private router: Router) {}
 
   ngOnInit(): void {
-    this.studentideaService.getIdea().subscribe((response: any) => {
+    this.ideaservice.getIdea().subscribe((response: any) => {
       this.studentideas = response;
       this.ideas = this.studentideas;
     });

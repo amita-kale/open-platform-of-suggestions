@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StudentideaService } from '../studentidea.service';
+import { ideaService } from '../idea.service';
 
 @Component({
   selector: 'app-new-idea',
@@ -19,7 +19,7 @@ export class NewIdeaComponent implements OnInit {
   };
 
   constructor(
-    private studentideaService: StudentideaService,
+    private ideaservice: ideaService,
     private router: Router,
     private routeParam: ActivatedRoute
   ) {}
@@ -27,7 +27,7 @@ export class NewIdeaComponent implements OnInit {
   ngOnInit(): void {
     if (this.routeParam.snapshot.params.ui) {
       this.isEdit = true;
-      const stud = this.studentideaService.getSpecificStudentByIndex(
+      const stud = this.ideaservice.getSpecificStudentByIndex(
         this.routeParam.snapshot.params.ui
       );
       this.studentidea = {
@@ -51,9 +51,9 @@ export class NewIdeaComponent implements OnInit {
     };
 
     if (this.isEdit == false) {
-      this.studentideaService.addidea(studentidea);
+      this.ideaservice.addidea(studentidea);
     } else {
-      this.studentideaService.updateStudent(
+      this.ideaservice.updateStudent(
         this.routeParam.snapshot.params.ui,
         studentidea
       );
