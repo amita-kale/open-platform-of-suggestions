@@ -9,7 +9,7 @@ import { DepartmentService } from '../department.service';
 })
 export class DepartmentFormComponent implements OnInit {
   isEdit = false;
-  index = 1;
+  index = -1;
   department = {
     name: '',
     head: '',

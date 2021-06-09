@@ -25,10 +25,13 @@ export class ViewIdeaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params.id);
-    this.ideainfo = this.studentideaService.getSpecificStudentByIndex(
-      this.route.snapshot.params.id
-    );
+    // console.log();
+    const id = this.route.snapshot.params.id;
+    // this.ideainfo = this.studentideaService.getSpecificStudentByIndex(id);
+    // this.ideainfo = this.studentideaService.getSpecificStudentByIndex(id);
+    this.studentideaService.getIdeaById(id).subscribe((response: any) => {
+      this.ideainfo = response;
+    });
     console.log(this.ideainfo);
   }
 

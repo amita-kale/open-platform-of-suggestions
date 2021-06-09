@@ -12,26 +12,26 @@
 
       <div class="mb-3">
         <label for="exampleForm" class="form-label">description</label>
-        <input type="text" class="form-control border-0" id="head" aria-describedby="emailHelp"
+        <input type="text" class="form-control border-0" id="des" aria-describedby="emailHelp"
           [(ngModel)]="ideainfo.description" name="des">
       </div>
 
       <div class="mb-3">
         <label for="exampleFormControl" class="form-label">benefit</label>
-        <input type="text" class="form-control border-0" id="head" aria-describedby="emailHelp" [(ngModel)]="ideainfo.benefits"
+        <input type="text" class="form-control border-0" id="benefits" aria-describedby="emailHelp" [(ngModel)]="ideainfo.benefits"
           name="benifit">
       </div>
 
 
       <div class="mb-3">
         <label for="exampleFormControl" class="form-label">Idea created On</label>
-        <input type="text" class="form-control border-0" id="head" aria-describedby="emailHelp" [(ngModel)]="ideainfo.createdon"
+        <input type="date" class="form-control border-0" id="ICO" aria-describedby="emailHelp" [(ngModel)]="ideainfo.createdon"
           name="createon">
       </div>
 
       <div class="mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">department</label>
-        <input type="text" class="form-control border-0" id="head" aria-describedby="emailHelp" [(ngModel)]="ideainfo.department"
+        <input type="text" class="form-control border-0" id="dept" aria-describedby="emailHelp" [(ngModel)]="ideainfo.department"
           name="dept">
       </div>
 
@@ -39,7 +39,7 @@
 
       <div class="mb-3">
         <label for="exampleFormControlTextarea11" class="form-label">Author Name</label>
-        <input type="text" class="form-control border-0" id="head" aria-describedby="emailHelp" [(ngModel)]="ideainfo.authorname"
+        <input type="text" class="form-control border-0" id="author" aria-describedby="emailHelp" [(ngModel)]="ideainfo.authorname"
           name="author">
       </div>
     </form>
@@ -53,7 +53,7 @@
   <button type="button" class="btn btn-primary">accept</button>&nbsp;
   <button type="button" class="btn btn-primary" (click)="rejectClicked()">Reject</button><br>
 <div *ngIf="rejectvar === true">
-  Reason:<input type="text" class="form-control" id="head" aria-describedby="emailHelp" name="dept"
+  Reason:<input type="text" class="form-control" id="reason" aria-describedby="emailHelp" name="dept"
     placeholder="If Idea Is Rejected"><br>
 </div>
 <hr>

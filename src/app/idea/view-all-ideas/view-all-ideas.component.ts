@@ -23,14 +23,15 @@ export class ViewAllIdeasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.studentideas = this.studentideaService.getStudents();
-    this.ideas = this.studentideas;
+    this.studentideaService.getIdea().subscribe((response: any) => {
+      this.studentideas = response;
+      this.ideas = this.studentideas;
+    });
   }
-
   viewallideadetail(i, item) {
     console.log('index:', i, item);
     // this.router.navigate(['idea/new-idea/' + i]);
-    this.router.navigate(['/idea/view-idea/' + i]);
+    this.router.navigate(['/idea/view-idea/' + item.id]);
   }
   deleteFunction(i) {
     console.log('delete call');
