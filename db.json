@@ -124,5 +124,47 @@
       "createdon": null,
       "authorname": ""
     }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "amita",
+      "password": "amita"
+    },
+    {
+      "username": "Amita",
+      "lastname": "",
+      "email": "",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "username": "ashvini",
+      "lastname": "jore",
+      "email": "amitakale297@gmail.com",
+      "password": "1234567890",
+      "id": 3
+    },
+    {
+      "username": "aniket",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 4
+    },
+    {
+      "username": "",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 5
+    },
+    {
+      "username": "rutika",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 6
+    }
   ]
 }

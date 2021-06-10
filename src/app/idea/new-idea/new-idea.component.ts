@@ -18,11 +18,7 @@ export class NewIdeaComponent implements OnInit {
     authorname: '',
   };
 
-  constructor(
-    private ideaservice: ideaService,
-    private router: Router,
-    private routeParam: ActivatedRoute
-  ) {}
+  constructor(private ideaservice: ideaService, private router: Router) {}
 
   ngOnInit(): void {}
   submitClicked() {
