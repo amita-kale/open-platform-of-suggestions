@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentideaService } from '../studentidea.service';
+import { ideaService } from '../idea.service';
 
 @Component({
   selector: 'app-view-idea',
@@ -21,15 +21,13 @@ export class ViewIdeaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private studentideaService: StudentideaService
+    private ideaservice: ideaService
   ) {}
 
   ngOnInit(): void {
-    // console.log();
     const id = this.route.snapshot.params.id;
     // this.ideainfo = this.studentideaService.getSpecificStudentByIndex(id);
-    // this.ideainfo = this.studentideaService.getSpecificStudentByIndex(id);
-    this.studentideaService.getIdeaById(id).subscribe((response: any) => {
+    this.ideaservice.getIdeaById(id).subscribe((response: any) => {
       this.ideainfo = response;
     });
     console.log(this.ideainfo);

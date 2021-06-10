@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StudentideaService } from '../studentidea.service';
+import { ideaService } from '../idea.service';
 
 @Component({
   selector: 'app-new-idea',
@@ -8,8 +8,8 @@ import { StudentideaService } from '../studentidea.service';
   styleUrls: ['./new-idea.component.css'],
 })
 export class NewIdeaComponent implements OnInit {
-  isEdit = false;
   studentidea = {
+    id: null,
     title: '',
     description: '',
     benefits: '',
@@ -18,47 +18,12 @@ export class NewIdeaComponent implements OnInit {
     authorname: '',
   };
 
-  constructor(
-    private studentideaService: StudentideaService,
-    private router: Router,
-    private routeParam: ActivatedRoute
-  ) {}
+  constructor(private ideaservice: ideaService, private router: Router) {}
 
-  ngOnInit(): void {
-    if (this.routeParam.snapshot.params.ui) {
-      this.isEdit = true;
-      const stud = this.studentideaService.getSpecificStudentByIndex(
-        this.routeParam.snapshot.params.ui
-      );
-      this.studentidea = {
-        title: stud.title,
-        description: stud.description,
-        benefits: stud.benefits,
-        department: stud.department,
-        createdon: stud.createdon,
-        authorname: stud.authorname,
-      };
-    }
-  }
+  ngOnInit(): void {}
   submitClicked() {
-    const studentidea = {
-      title: this.studentidea.title,
-      description: this.studentidea.description,
-      benefits: this.studentidea.benefits,
-      department: this.studentidea.department,
-      createdon: this.studentidea.createdon,
-      authorname: this.studentidea.authorname,
-    };
-
-    if (this.isEdit == false) {
-      this.studentideaService.addidea(studentidea);
-    } else {
-      this.studentideaService.updateStudent(
-        this.routeParam.snapshot.params.ui,
-        studentidea
-      );
-    }
-
-    this.router.navigate(['./idea/view-all-ideas']);
+    this.ideaservice.postIdea(this.studentidea).subscribe(() => {
+      this.router.navigate(['./idea/view-all-ideas']);
+    });
   }
 }

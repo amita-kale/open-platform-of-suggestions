@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class StudentideaService {
+export class ideaService {
   ideas = [
     {
       title: 'idea Under Evaluation 1',
@@ -70,6 +70,10 @@ export class StudentideaService {
 
   getIdeaById(id: number) {
     return this.httpClient.get('http://localhost:3000/ideas/' + id);
+  }
+
+  postIdea(studentidea) {
+    return this.httpClient.post('http://localhost:3000/ideas/', studentidea);
   }
 
   addidea(studentidea) {

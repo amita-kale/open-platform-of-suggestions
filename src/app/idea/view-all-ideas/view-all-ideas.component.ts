@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentideaService } from '../studentidea.service';
+import { ideaService } from '../idea.service';
 
 @Component({
   selector: 'app-view-all-ideas',
@@ -17,13 +17,10 @@ export class ViewAllIdeasComponent implements OnInit {
   // department: '',
   // }
 
-  constructor(
-    private studentideaService: StudentideaService,
-    private router: Router
-  ) {}
+  constructor(private ideaservice: ideaService, private router: Router) {}
 
   ngOnInit(): void {
-    this.studentideaService.getIdea().subscribe((response: any) => {
+    this.ideaservice.getIdea().subscribe((response: any) => {
       this.studentideas = response;
       this.ideas = this.studentideas;
     });
@@ -32,10 +29,6 @@ export class ViewAllIdeasComponent implements OnInit {
     console.log('index:', i, item);
     // this.router.navigate(['idea/new-idea/' + i]);
     this.router.navigate(['/idea/view-idea/' + item.id]);
-  }
-  deleteFunction(i) {
-    console.log('delete call');
-    this.studentideaService.delStudents(i);
   }
 
   statusClicked(status) {

@@ -51,14 +51,120 @@
       "status": "Implemented"
     },
     {
-     "id": 6,
-     "title": "idea Implemented 2",
-     "description": "",
-     "benefits": "",
-     "department": "",
-     "createdon": null,
-     "authorname": "Aniket kale",
-     "status": "Implemented"
+      "id": 6,
+      "title": "idea Implemented 2",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": "Aniket kale",
+      "status": "Implemented"
+    },
+    {
+      "id": 7,
+      "title": "idea Implemented 1",
+      "description": "a",
+      "benefits": "b",
+      "department": "c",
+      "createdon": 21,
+      "authorname": "Aniket kale",
+      "status": "Implemented"
+    },
+    {
+      "title": "communication",
+      "description": "ertyu",
+      "benefits": "ghjk",
+      "department": "computer engineering",
+      "createdon": "2021-06-10",
+      "authorname": "-amita kale",
+      "id": 8
+    },
+    {
+      "id": 9,
+      "title": "communication",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": ""
+    },
+    {
+      "id": 10,
+      "title": "communication1",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": ""
+    },
+    {
+      "id": 11,
+      "title": "communication1",
+      "description": "rtj",
+      "benefits": "ghjkl",
+      "department": "computer engineering",
+      "createdon": "2021-06-12",
+      "authorname": "-rutika jadhav"
+    },
+    {
+      "id": 12,
+      "title": "communicationnn",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": ""
+    },
+    {
+      "id": 13,
+      "title": "sdfkjh",
+      "description": "",
+      "benefits": "",
+      "department": "",
+      "createdon": null,
+      "authorname": ""
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "amita",
+      "password": "amita"
+    },
+    {
+      "username": "Amita",
+      "lastname": "",
+      "email": "",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "username": "ashvini",
+      "lastname": "jore",
+      "email": "amitakale297@gmail.com",
+      "password": "1234567890",
+      "id": 3
+    },
+    {
+      "username": "aniket",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 4
+    },
+    {
+      "username": "",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 5
+    },
+    {
+      "username": "rutika",
+      "lastname": "",
+      "email": "",
+      "password": null,
+      "id": 6
     }
   ]
 }

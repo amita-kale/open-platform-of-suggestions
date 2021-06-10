@@ -9,21 +9,21 @@
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">First Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" [(ngModel)]="user.username" name="un">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">last Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="exampleInputEmai" aria-describedby="emailHelp" [(ngModel)]="user.lastname" name="ln">
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email Id</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="exampleInput" aria-describedby="emailHelp" [(ngModel)]="user.email" name="email">
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="user.password" name="pw">
           </div>
-          <button type="button" class="btn btn-primary" [routerLink]="['/auth/login']">Create Account</button>
+          <button type="button" class="btn btn-primary"  (click)="createAccount()">Create Account</button>
           <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/login']">Already an
             Account?</button>
         </form>

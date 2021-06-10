@@ -22,7 +22,7 @@
   <div class="col">
     <div class="card mt-3 mx-3" *ngFor="let item of studentideas,let i=index">
       <div class="card-body">
-        {{item | json}}
+        <!-- {{item | json}} -->
         <h5 class="card-title cursor-pointer text-info" (click)="viewallideadetail(i,item)">{{item.title}}</h5>
         <p class="card-text">
           <span class="text-secondary">-{{item.authorname}}</span>
