@@ -34,6 +34,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('./rating/rating.module').then((m) => m.RatingModule),
       },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./user/user.module').then((m) => m.UserModule),
+      },
     ],
   },
   {

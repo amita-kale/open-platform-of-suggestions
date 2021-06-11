@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     if (user) {
       this.router.navigate(['/home']);
     } else {
-      alert('username incorrect');
+      alert('username  and password is incorrect');
     }
   }
 }

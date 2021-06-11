@@ -52,4 +52,9 @@ export class DepartmentFormComponent implements OnInit {
 
     this.router.navigate(['/department/table']);
   }
+
+  resetClicked() {
+    this.isEdit = false;
+    this.index = -1;
+  }
 }

@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from './user/user.component';
+import { UserformComponent } from './userform/userform.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
+    path: 'user-form',
+    component: UserformComponent,
+  },
+  {
+    path: 'user-form/:id',
+    component: UserformComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}
