@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ideaService } from '../idea.service';
+import { Idea } from 'src/app/shared/models/idea.model';
+import { Statuses } from 'src/app/shared/models/status.model';
+import { User } from 'src/app/shared/models/user.model';
+import { IdeaService } from '../idea.service';
 
 @Component({
   selector: 'app-my-idea',
@@ -8,31 +11,34 @@ import { ideaService } from '../idea.service';
   styleUrls: ['./my-idea.component.css'],
 })
 export class MyIdeaComponent implements OnInit {
-  studentideas = [];
-  ideas = [];
+  ideas: Array<Idea> = [];
+  statuses: Statuses;
+  selectedStatus = '';
 
-  constructor(private ideaservice: ideaService, private router: Router) {}
+  constructor(private homeService: IdeaService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.ideaservice.getIdeas().subscribe((response: any) => {
-      this.studentideas = response;
-      this.ideas = this.studentideas;
+  ngOnInit() {
+    this.homeService.getStatuses().subscribe((response: any) => {
+      this.statuses = response;
+      this.selectedStatus = this.statuses.underEvaluation;
+      this.getIdeas(this.selectedStatus);
     });
   }
 
-  viewallideadetail(i, item) {
-    console.log('index:', i, item);
-    this.router.navigate(['/idea/view-idea/' + item.id]);
+  getIdeas(status) {
+    const user: User = JSON.parse(localStorage.getItem('user'));
+
+    this.homeService.getIdeas().subscribe((response: Array<Idea>) => {
+      this.ideas = response.filter(idea => idea.status === status && user.id === idea.authorId);
+    });
+  }
+
+  viewIdea(ideaId) {
+    this.router.navigate(['/idea/view-idea/' + ideaId]);
   }
 
   statusClicked(status) {
-    console.log(status);
-
-    this.studentideas = this.ideas.filter((ele) => {
-      console.log(ele.title);
-
-      return ele.status == status;
-    });
-    console.log(this.studentideas);
+    this.selectedStatus = status;
+    this.getIdeas(this.selectedStatus);
   }
 }

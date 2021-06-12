@@ -4,7 +4,7 @@ import { Department } from 'src/app/shared/models/department.model';
 import { Idea } from 'src/app/shared/models/idea.model';
 import { Statuses } from 'src/app/shared/models/status.model';
 import { User } from 'src/app/shared/models/user.model';
-import { ideaService } from '../idea.service';
+import { IdeaService } from '../idea.service';
 
 @Component({
   selector: 'app-new-idea',
@@ -16,7 +16,7 @@ export class NewIdeaComponent implements OnInit {
   departments: Array<Department> = [];
   statuses: Statuses;
 
-  constructor(private ideaService: ideaService, private router: Router) {}
+  constructor(private ideaService: IdeaService, private router: Router) {}
 
   ngOnInit(): void {
     this.ideaService.getDepartments().subscribe((response: any) => {

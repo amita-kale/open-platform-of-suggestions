@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ideaService {
+export class IdeaService {
   constructor(private httpClient: HttpClient) {}
 
   getStatuses() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ideaService } from '../idea.service';
+import { IdeaService } from '../idea.service';
 
 @Component({
   selector: 'app-view-all-ideas',
@@ -17,7 +17,7 @@ export class ViewAllIdeasComponent implements OnInit {
   // department: '',
   // }
 
-  constructor(private ideaservice: ideaService, private router: Router) {}
+  constructor(private ideaservice: IdeaService, private router: Router) {}
 
   ngOnInit(): void {
     this.ideaservice.getIdeas().subscribe((response: any) => {
