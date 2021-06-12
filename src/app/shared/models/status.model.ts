@@ -1,5 +1,5 @@
 export interface Statuses {
-  userEvaluation: string;
+  underEvaluation: string;
   ideaAlreadyExists: string;
   acceptedByTeacher: string;
   acceptedByHOD: string;

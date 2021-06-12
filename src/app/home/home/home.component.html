@@ -13,56 +13,56 @@
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer under-evaluation"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.userEvaluation}"
-      (click)="statusClicked(statuses.userEvaluation)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.underEvaluation}"
+      (click)="statusClicked(statuses?.underEvaluation)"
     >
-      {{statuses.userEvaluation}}
+      {{statuses?.underEvaluation}}
     </div>
   </div>
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer idea-already-exist"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.ideaAlreadyExists}"
-      (click)="statusClicked(statuses.ideaAlreadyExists)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.ideaAlreadyExists}"
+      (click)="statusClicked(statuses?.ideaAlreadyExists)"
     >
-    {{statuses.ideaAlreadyExists}}
+    {{statuses?.ideaAlreadyExists}}
     </div>
   </div>
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer accepted-for-implementation"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.acceptedByTeacher}"
-      (click)="statusClicked(statuses.acceptedByTeacher)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedByTeacher}"
+      (click)="statusClicked(statuses?.acceptedByTeacher)"
     >
-    {{statuses.acceptedByTeacher}}
+    {{statuses?.acceptedByTeacher}}
     </div>
   </div>
 
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer implemented"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.acceptedByHOD}"
-      (click)="statusClicked(statuses.acceptedByHOD)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedByHOD}"
+      (click)="statusClicked(statuses?.acceptedByHOD)"
     >
-    {{statuses.acceptedByHOD}}
+    {{statuses?.acceptedByHOD}}
     </div>
   </div>
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer implemented"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.acceptedForImplementation}"
-      (click)="statusClicked(statuses.acceptedForImplementation)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedForImplementation}"
+      (click)="statusClicked(statuses?.acceptedForImplementation)"
     >
-    {{statuses.acceptedForImplementation}}
+    {{statuses?.acceptedForImplementation}}
     </div>
   </div>
   <div class="col-2">
     <div
       class="border p-5 cursor-pointer implemented"
-      [ngClass]="{'border-2-black': selectedStatus === statuses.implemented}"
-      (click)="statusClicked(statuses.implemented)"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.implemented}"
+      (click)="statusClicked(statuses?.implemented)"
     >
-      {{statuses.implemented}}
+      {{statuses?.implemented}}
     </div>
   </div>
 </div>
@@ -73,7 +73,7 @@
       <div class="card-body">
         <h5
           class="card-title cursor-pointer text-info"
-          (click)="viewIdea(i, item)"
+          (click)="viewIdea(item.id)"
         >
           {{ item.title }}
         </h5>

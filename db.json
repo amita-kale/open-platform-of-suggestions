@@ -10,7 +10,7 @@
     "departmentName": "admin"
   },
   "statuses": {
-    "userEvaluation": "Under Evaluation",
+    "underEvaluation": "Under Evaluation",
     "ideaAlreadyExists": "Idea Already Exists",
     "acceptedByTeacher": "Accepted By Teacher",
     "acceptedByHOD": "Accepted By HOD",

@@ -33,7 +33,7 @@ export class NewIdeaComponent implements OnInit {
     this.ideaModel.authorId = user.id;
     this.ideaModel.authorName = user.firstName + ' ' + user.lastName;
     this.ideaModel.createdOn = new Date().toISOString();
-    this.ideaModel.status = this.statuses.userEvaluation;
+    this.ideaModel.status = this.statuses.underEvaluation;
 
     if (this.ideaModel.departmentId) {
       const department = this.departments.find(
