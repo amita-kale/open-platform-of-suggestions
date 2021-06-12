@@ -5,28 +5,38 @@ import { DepartmentService } from '../department.service';
 @Component({
   selector: 'app-department-table',
   templateUrl: './department-table.component.html',
-  styleUrls: ['./department-table.component.css']
+  styleUrls: ['./department-table.component.css'],
 })
 export class DepartmentTableComponent implements OnInit {
+  departmentData = [
+    {
+      id: '',
+      name: '',
+    },
+  ];
 
-  studentdata = [];
+  constructor(
+    private departmentService: DepartmentService,
+    private router: Router
+  ) {}
 
-
-  constructor(private departmentService: DepartmentService, private router: Router) { }
-
-  ngOnInit(): void {
-    this.studentdata = this.departmentService.getDepartmentInfo();
-    console.log(this.studentdata);
-
+  ngOnInit() {
+    // this.departmentData = this.departmentService.getDepartmentInfo();
+    // console.log(this.departmentData);
+    this.departmentService.getData().subscribe((response: any) => {
+      this.departmentData = response;
+    });
   }
 
-  deleteFunction(i) {
-    this.departmentService.delDepartment(i);
+  deleteClicked(item) {
+    this.departmentService.deleteData(item.id).subscribe(() => {
+      // this.getData();
+    });
   }
 
-  editFunction(i, item) {
-    console.log("index:", i, item);
-    this.router.navigate(['department/form/' + i]);
-  }
+  editFunction(item) {
+    console.log(item);
 
+    this.router.navigate(['department/form/' + item]);
+  }
 }

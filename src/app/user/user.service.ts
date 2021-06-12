@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,10 +7,10 @@ import { Injectable } from '@angular/core';
 export class UserService {
   userinfo = [];
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   addUserData(user) {
-    this.userinfo.push(user);
+    return this.httpClient.post('http://localhost:3000/users', user);
   }
   getUserInfo() {
     return this.userinfo;

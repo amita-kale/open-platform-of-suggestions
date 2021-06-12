@@ -76,7 +76,7 @@
       "benefits": "ghjk",
       "department": "computer engineering",
       "createdon": "2021-06-10",
-      "authorname": "-amita kale",
+      "authorname": "amita kale",
       "id": 8
     },
     {
@@ -130,41 +130,79 @@
       "id": 1,
       "username": "amita",
       "password": "amita"
+    }
+  ],
+  "status": {
+    "userEvaluation": "Under Evaluation",
+    "ideaAlreadyExists": "Idea Already Exists",
+    "acceptedByTeacher": "Accepted By Teacher",
+    "acceptedByHOD": "Accepted By HOD",
+    "acceptedForImplementation": "Accepted For Implementation",
+    "Implemented": "Implemented"
+  },
+  "role": [
+    {
+      "roleid": "1",
+      "rolename": "HOD"
     },
     {
-      "username": "Amita",
+      "roleid": "2",
+      "rolename": "teacher"
+    },
+    {
+      "roleid": "3",
+      "rolename": "student"
+    }
+  ],
+  "admin": {
+    "email": "admin12@gmail.com",
+    "password": "123",
+    "role": "admin"
+  },
+  "department": [
+    {
+      "id": "1",
+      "name": "computer"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstname": "amita",
+      "lastname": "kale",
+      "gender": "female",
+      "role": "student",
+      "email": "amitakale@gmail.com",
+      "password": "1234",
+      "departmentid": "101",
+      "departmentname": "computer"
+    },
+    {
+      "id": "YBm1Wfw",
+      "firstname": "ff",
       "lastname": "",
-      "email": "",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "username": "ashvini",
-      "lastname": "jore",
-      "email": "amitakale297@gmail.com",
-      "password": "1234567890",
-      "id": 3
-    },
-    {
-      "username": "aniket",
-      "lastname": "",
+      "gender": "",
+      "role": "",
       "email": "",
       "password": null,
-      "id": 4
-    },
+      "departmentid": null,
+      "departmentname": ""
+    }
+  ],
+  "ideass": [
     {
-      "username": "",
-      "lastname": "",
-      "email": "",
-      "password": null,
-      "id": 5
-    },
-    {
-      "username": "rutika",
-      "lastname": "",
-      "email": "",
-      "password": null,
-      "id": 6
+      "id": 1,
+      "title": "communication",
+      "description": "",
+      "benefits": "",
+      "likes": "",
+      "createdOn": null,
+      "CommentHOD": "",
+      "status": "",
+      "departmentId": "",
+      "authorName": "",
+      "autherId": "",
+      "autherName": ""
     }
   ]
 }

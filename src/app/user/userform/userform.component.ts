@@ -11,8 +11,15 @@ export class UserformComponent implements OnInit {
   isEdit = false;
   index = -1;
   user = {
-    name: '',
+    id: '',
+    firstname: '',
+    lastname: '',
+    gender: '',
     role: '',
+    email: '',
+    password: null,
+    departmentid: null,
+    departmentname: '',
   };
 
   constructor(
@@ -28,24 +35,26 @@ export class UserformComponent implements OnInit {
         this.routeParam.snapshot.params.id
       );
 
-      this.user = {
-        name: stud.name,
-        role: stud.role,
-      };
+      // this.user = {
+      //   firstname: stud.firstname,
+      //   role: stud.role,
+      // };
     }
   }
 
   submitClicked() {
-    const user = {
-      name: this.user.name,
-      role: this.user.role,
-    };
+    // const user = {
+    //   firstname: this.user.firstname,
+    //   role: this.user.role,
+    // };
 
-    if (this.isEdit == false) {
-      this.userService.addUserData(user);
-    } else {
-      this.userService.updateUser(this.routeParam.snapshot.params.id, user);
-    }
+    // if (this.isEdit == false) {
+    //   this.userService.addUserData(user);
+    // } else {
+    //   this.userService.updateUser(this.routeParam.snapshot.params.id, user);
+    // }
+
+    this.userService.addUserData(this.user).subscribe(() => {});
 
     this.router.navigate(['/user/user']);
   }
