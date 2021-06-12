@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.homeService.getStatuses().subscribe((response: any) => {
       this.statuses = response;
-      this.selectedStatus = this.statuses.userEvaluation;
+      this.selectedStatus = this.statuses.underEvaluation;
       this.getIdeas(this.selectedStatus);
     });
   }
