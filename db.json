@@ -1,4 +1,23 @@
 {
+  "admin": {
+    "userName": "admin",
+    "password": "admin",
+    "role": "admin",
+    "name": "Admin"
+  },
+  "statuses": {
+    "userEvaluation": "Under Evaluation",
+    "ideaAlreadyExists": "Idea Already Exists",
+    "acceptedByTeacher": "Accepted By Teacher",
+    "acceptedByHOD": "Accepted By HOD",
+    "acceptedForImplementation": "Accepted For Implementation",
+    "Implemented": "Implemented"
+  },
+  "roles": {
+    "studentRole": "Student",
+    "teacherRole": "Teacher",
+    "hodRole": "HOD"
+  },
   "ideas": [
     {
       "id": 1,
@@ -9,200 +28,25 @@
       "createdon": null,
       "authorname": "Aniket kale",
       "status": "Under Evaluation"
+    }
+  ],
+  "users": [],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Computer"
     },
     {
       "id": 2,
-      "title": "idea Under Evaluation 2",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": "Aniket kale",
-      "status": "Under Evaluation"
+      "name": "Machanical"
     },
     {
       "id": 3,
-      "title": "idea Accepted for Implementation",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": "Aniket kale",
-      "status": "Accepted for Implementation"
+      "name": "E % Tc"
     },
     {
       "id": 4,
-      "title": "idea Idea Already Exist",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": "Aniket kale",
-      "status": "Idea Already Exist"
-    },
-    {
-      "id": 5,
-      "title": "idea Implemented 1",
-      "description": "a",
-      "benefits": "b",
-      "department": "c",
-      "createdon": 21,
-      "authorname": "Aniket kale",
-      "status": "Implemented"
-    },
-    {
-      "id": 6,
-      "title": "idea Implemented 2",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": "Aniket kale",
-      "status": "Implemented"
-    },
-    {
-      "id": 7,
-      "title": "idea Implemented 1",
-      "description": "a",
-      "benefits": "b",
-      "department": "c",
-      "createdon": 21,
-      "authorname": "Aniket kale",
-      "status": "Implemented"
-    },
-    {
-      "title": "communication",
-      "description": "ertyu",
-      "benefits": "ghjk",
-      "department": "computer engineering",
-      "createdon": "2021-06-10",
-      "authorname": "amita kale",
-      "id": 8
-    },
-    {
-      "id": 9,
-      "title": "communication",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": ""
-    },
-    {
-      "id": 10,
-      "title": "communication1",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": ""
-    },
-    {
-      "id": 11,
-      "title": "communication1",
-      "description": "rtj",
-      "benefits": "ghjkl",
-      "department": "computer engineering",
-      "createdon": "2021-06-12",
-      "authorname": "-rutika jadhav"
-    },
-    {
-      "id": 12,
-      "title": "communicationnn",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": ""
-    },
-    {
-      "id": 13,
-      "title": "sdfkjh",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": ""
-    }
-  ],
-  "user": [
-    {
-      "id": 1,
-      "username": "amita",
-      "password": "amita"
-    }
-  ],
-  "status": {
-    "userEvaluation": "Under Evaluation",
-    "ideaAlreadyExists": "Idea Already Exists",
-    "acceptedByTeacher": "Accepted By Teacher",
-    "acceptedByHOD": "Accepted By HOD",
-    "acceptedForImplementation": "Accepted For Implementation",
-    "Implemented": "Implemented"
-  },
-  "role": [
-    {
-      "roleid": "1",
-      "rolename": "HOD"
-    },
-    {
-      "roleid": "2",
-      "rolename": "teacher"
-    },
-    {
-      "roleid": "3",
-      "rolename": "student"
-    }
-  ],
-  "admin": {
-    "email": "admin12@gmail.com",
-    "password": "123",
-    "role": "admin"
-  },
-  "department": [
-    {
-      "id": "1",
-      "name": "computer"
-    }
-  ],
-  "users": [
-    {
-      "id": "1",
-      "firstname": "amita",
-      "lastname": "kale",
-      "gender": "female",
-      "role": "student",
-      "email": "amitakale@gmail.com",
-      "password": "1234",
-      "departmentid": "101",
-      "departmentname": "computer"
-    },
-    {
-      "id": "YBm1Wfw",
-      "firstname": "ff",
-      "lastname": "",
-      "gender": "",
-      "role": "",
-      "email": "",
-      "password": null,
-      "departmentid": null,
-      "departmentname": ""
-    }
-  ],
-  "ideass": [
-    {
-      "id": 1,
-      "title": "communication",
-      "description": "",
-      "benefits": "",
-      "likes": "",
-      "createdOn": null,
-      "CommentHOD": "",
-      "status": "",
-      "departmentId": "",
-      "authorName": "",
-      "autherId": "",
-      "autherName": ""
+      "name": "Civil"
     }
   ]
 }

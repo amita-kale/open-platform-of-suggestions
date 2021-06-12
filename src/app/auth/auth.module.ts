@@ -4,10 +4,9 @@ import { NgModule } from '@angular/core';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegistrationComponent],
+  declarations: [LoginComponent],
   imports: [CommonModule, AuthRoutingModule, FormsModule],
 })
 export class AuthModule {}
