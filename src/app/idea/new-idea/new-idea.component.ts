@@ -13,9 +13,14 @@ export class NewIdeaComponent implements OnInit {
     title: '',
     description: '',
     benefits: '',
-    department: '',
-    createdon: null,
-    authorname: '',
+    likes: '',
+    createdOn: null,
+    CommentHOD: '',
+    status: '',
+    departmentId: '',
+    departmentName: '',
+    authorId: '',
+    authorName: '',
   };
 
   constructor(private ideaservice: ideaService, private router: Router) {}

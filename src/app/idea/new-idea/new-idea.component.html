@@ -22,50 +22,54 @@
           name="benefites">></textarea>
       </div>
 
-
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Likes</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.likes"
+          name="likes">></textarea>
+      </div>
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Idea created on</label>
-        <input type="date" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.createdon"
+        <input type="date" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.createdOn"
           name="author">
       </div>
 
-      <!-- <div class="card">
-
-        <div class="card-body">
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Benefits</label>
-
-
-             <div class="card">
-
-               <div class="card-body">
-                <h5 class="card-title">Tittle</h5>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <p class="card-text">Description</p>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button type="button" class="btn btn-primary" style="margin-top: 15px">Add</button>
-
-              </div>
-             </div>
-  </div>
-  </div>
-</div> -->
-
-
-
-
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Department</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.department"
-          name="department">
+        <label for="exampleFormControlTextarea1" class="form-label">comment HOD</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.CommentHOD"
+          name="ct">></textarea>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Author Name</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.authorname"
-          name="author">
+        <label for="exampleFormControlTextarea1" class="form-label">status</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.status"
+          name="status">></textarea>
       </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">departmentId</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.departmentId"
+          name="deptid">></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">departmentName</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.departmentName"
+          name="deptname">></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">authorId</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.authorId"
+          name="authorid">></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">authorName</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.authorName"
+          name="authorname">></textarea>
+      </div>
+
 
 
       <button type="button" class="btn btn-primary" (click)="submitClicked()">
