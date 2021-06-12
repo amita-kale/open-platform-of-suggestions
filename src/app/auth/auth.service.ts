@@ -10,7 +10,10 @@ export class AuthService {
   postUser(user) {
     return this.httpClient.post('http://localhost:3000/user', user);
   }
-  getIdea() {
+  getUsers() {
     return this.httpClient.get('http://localhost:3000/user');
+  }
+  getAdminDetails() {
+    return this.httpClient.get('http://localhost:3000/admin');
   }
 }

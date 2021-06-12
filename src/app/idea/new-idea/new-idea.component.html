@@ -1,80 +1,66 @@
 <div class="card mt-2">
-  <div class="card-header card-title">
-    Create New Idea
-  </div>
+  <div class="card-header card-title">Create New Idea</div>
   <div class="card-body">
     <form>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Idea Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          [(ngModel)]="studentidea.title" name="title">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          [(ngModel)]="ideaModel.title"
+          name="title"
+        />
       </div>
 
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea" rows="3" [(ngModel)]="studentidea.description"
-          name="description">></textarea>
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Description</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea"
+          rows="3"
+          [(ngModel)]="ideaModel.description"
+          name="description"
+        ></textarea>
       </div>
 
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Benefites</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.benefits"
-          name="benefites">></textarea>
+        <label for="exampleFormControlTextarea1" class="form-label"
+          >Benefites</label
+        >
+        <textarea
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="3"
+          [(ngModel)]="ideaModel.benefits"
+          name="benefites"
+        ></textarea>
       </div>
 
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Likes</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.likes"
-          name="likes">></textarea>
+        <label for="department" class="form-label">Department</label>
+        <select
+          name="department"
+          class="form-control"
+          id="department"
+          [(ngModel)]="ideaModel.departmentId"
+        >
+          <option [value]="null" disabled>--Select--</option>
+          <option
+            *ngFor="let department of departments"
+            [value]="department.id"
+          >
+            {{ department.name }}
+          </option>
+        </select>
       </div>
 
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Idea created on</label>
-        <input type="date" class="form-control" id="exampleInputPassword1" [(ngModel)]="studentidea.createdOn"
-          name="author">
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">comment HOD</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.CommentHOD"
-          name="ct">></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">status</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.status"
-          name="status">></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">departmentId</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.departmentId"
-          name="deptid">></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">departmentName</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.departmentName"
-          name="deptname">></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">authorId</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.authorId"
-          name="authorid">></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">authorName</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="studentidea.authorName"
-          name="authorname">></textarea>
-      </div>
-
-
-
-      <button type="button" class="btn btn-primary" (click)="submitClicked()">
-        submit</button>
-      <!-- <button type="button" class="btn btn-link float-right" [routerLink]="['/auth/registration']">Reset</button> -->
+      <button type="button" class="btn btn-primary" (click)="createIdea()">
+        submit
+      </button>
     </form>
   </div>
 </div>
