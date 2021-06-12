@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Idea } from 'src/app/shared/models/idea.model';
+import { Statuses } from 'src/app/shared/models/status.model';
 import { HomeService } from '../home.service';
 
 @Component({
@@ -8,25 +10,32 @@ import { HomeService } from '../home.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  studentideas = [];
-  ideas = [];
+  ideas: Array<Idea> = [];
+  statuses: Statuses;
+  selectedStatus = '';
 
   constructor(private homeService: HomeService, private router: Router) {}
 
   ngOnInit() {
-    this.homeService.getIdea().subscribe((response: any) => {
-      this.studentideas = response;
-      this.ideas = response;
+    this.homeService.getStatuses().subscribe((response: any) => {
+      this.statuses = response;
+      this.selectedStatus = this.statuses.userEvaluation;
+      this.getIdeas(this.selectedStatus);
     });
   }
 
-  viewallideadetail(i, item) {
-    // console.log('index:', i, item);
-    this.router.navigate(['/idea/view-idea/' + item.id]);
-  }
-  statusClicked(status) {
-    this.studentideas = this.ideas.filter((ele) => {
-      return ele.status == status;
+  getIdeas(status) {
+    this.homeService.getIdeas().subscribe((response: Array<Idea>) => {
+      this.ideas = response.filter(idea => idea.status === status);
     });
+  }
+
+  viewIdea(ideaId) {
+    this.router.navigate(['/idea/view-idea/' + ideaId]);
+  }
+
+  statusClicked(status) {
+    this.selectedStatus = status;
+    this.getIdeas(this.selectedStatus);
   }
 }
