@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Idea } from 'src/app/shared/models/idea.model';
-import { ideaService } from '../idea.service';
+import { IdeaService } from '../idea.service';
 
 @Component({
   selector: 'app-view-idea',
@@ -13,7 +13,7 @@ export class ViewIdeaComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private ideaService: ideaService
+    private ideaService: IdeaService
   ) {}
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ideaService } from '../idea.service';
+import { IdeaService } from '../idea.service';
 
 @Component({
   selector: 'app-pending-for-accepatance',
@@ -10,7 +10,7 @@ import { ideaService } from '../idea.service';
 export class PendingForAccepatanceComponent implements OnInit {
   studentideas = [];
   ideas = [];
-  constructor(private ideaservice: ideaService, private router: Router) {}
+  constructor(private ideaservice: IdeaService, private router: Router) {}
 
   ngOnInit(): void {
     this.ideaservice.getIdeas().subscribe((response: any) => {
