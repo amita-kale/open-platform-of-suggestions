@@ -23,12 +23,14 @@ export class LoginComponent implements OnInit {
   }
   loginClicked() {
     const user = this.users.find(
-      (ele) => ele.username === this.userlogin.username
+      (ele) =>
+        ele.username === this.userlogin.username &&
+        ele.password === this.userlogin.password
     );
     if (user) {
       this.router.navigate(['/home']);
     } else {
-      alert('username incorrect');
+      alert('username  and password is incorrect');
     }
   }
 }
