@@ -1,9 +1,13 @@
 {
   "admin": {
+    "id": 0,
+    "firstName": "Admin",
+    "lastName": "",
     "userName": "admin",
     "password": "admin",
     "role": "admin",
-    "name": "Admin"
+    "departmentId": "admin",
+    "departmentName": "admin"
   },
   "statuses": {
     "userEvaluation": "Under Evaluation",
@@ -11,7 +15,7 @@
     "acceptedByTeacher": "Accepted By Teacher",
     "acceptedByHOD": "Accepted By HOD",
     "acceptedForImplementation": "Accepted For Implementation",
-    "Implemented": "Implemented"
+    "implemented": "Implemented"
   },
   "roles": {
     "studentRole": "Student",
@@ -20,14 +24,18 @@
   },
   "ideas": [
     {
-      "id": 1,
-      "title": "idea Under Evaluation 1",
-      "description": "",
-      "benefits": "",
-      "department": "",
-      "createdon": null,
-      "authorname": "Aniket kale",
-      "status": "Under Evaluation"
+      "title": "Test",
+      "description": "Test Des",
+      "benefits": "Test bene",
+      "likes": null,
+      "createdOn": "2021-06-12T12:36:36.075Z",
+      "hodComment": null,
+      "status": "Under Evaluation",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "id": 1
     }
   ],
   "users": [],

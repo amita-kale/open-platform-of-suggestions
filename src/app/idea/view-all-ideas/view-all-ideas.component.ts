@@ -20,7 +20,7 @@ export class ViewAllIdeasComponent implements OnInit {
   constructor(private ideaservice: ideaService, private router: Router) {}
 
   ngOnInit(): void {
-    this.ideaservice.getIdea().subscribe((response: any) => {
+    this.ideaservice.getIdeas().subscribe((response: any) => {
       this.studentideas = response;
       this.ideas = this.studentideas;
     });

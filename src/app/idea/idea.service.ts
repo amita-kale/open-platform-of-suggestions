@@ -5,66 +5,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ideaService {
-  ideas = [
-    {
-      title: 'idea Under Evaluation 1',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Under Evaluation',
-    },
-    {
-      title: 'idea Under Evaluation 2',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Under Evaluation',
-    },
-    {
-      title: 'idea Accepted for Implementation',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Accepted for Implementation',
-    },
-    {
-      title: 'idea Idea Already Exist',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Idea Already Exist',
-    },
-    {
-      title: 'idea Implemented 1',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Implemented',
-    },
-    {
-      title: 'idea Implemented 2',
-      description: '',
-      benefits: '',
-      department: '',
-      createdon: null,
-      authorname: 'Aniket kale',
-      status: 'Implemented',
-    },
-  ];
-
   constructor(private httpClient: HttpClient) {}
 
-  getIdea() {
+  getStatuses() {
+    return this.httpClient.get('http://localhost:3000/statuses/');
+  }
+
+  getRoles() {
+    return this.httpClient.get('http://localhost:3000/roles/');
+  }
+
+  getUsers() {
+    return this.httpClient.get('http://localhost:3000/statuses/');
+  }
+
+  getDepartments() {
+    return this.httpClient.get('http://localhost:3000/departments/');
+  }
+
+  getIdeas() {
     return this.httpClient.get('http://localhost:3000/ideas/');
   }
 
@@ -72,25 +31,7 @@ export class ideaService {
     return this.httpClient.get('http://localhost:3000/ideas/' + id);
   }
 
-  postIdea(studentidea) {
-    return this.httpClient.post('http://localhost:3000/ideas/', studentidea);
-  }
-
-  addidea(studentidea) {
-    this.ideas.push(studentidea);
-  }
-  getStudents() {
-    return this.ideas;
-  }
-
-  updateStudent(index, student) {
-    this.ideas[index] = student;
-  }
-  getSpecificStudentByIndex(index) {
-    return this.ideas[index];
-  }
-
-  delStudents(i) {
-    this.ideas.splice(i, 1);
+  createIdea(idea) {
+    return this.httpClient.post('http://localhost:3000/ideas/', idea);
   }
 }

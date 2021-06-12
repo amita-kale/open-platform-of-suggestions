@@ -39,6 +39,12 @@ export class LoginComponent implements OnInit {
     const isAdminUser =
       this.adminDetails.userName === this.userlogin.userName &&
       this.adminDetails.password === this.userlogin.password;
+
+    if (isAdminUser) {
+      localStorage.setItem('user', JSON.stringify(this.adminDetails));
+    } else if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    }
     if (user || isAdminUser) {
       this.router.navigate(['/home']);
     } else {
