@@ -6,3 +6,6 @@
   color: white;
   background-color: blue;
 }
+.main-container {
+  height: calc(100vh - 67px);
+}
