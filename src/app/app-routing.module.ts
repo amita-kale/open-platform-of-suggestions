@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 import { LayoutComponent } from './layout/layout.component';
+import { ADMIN, HOD, STUDENT, TEACHER } from './shared/constants';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/login',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
+    data: {
+      roles: [ADMIN, HOD, TEACHER, STUDENT],
+    },
     children: [
       {
         path: 'home',
@@ -28,6 +34,10 @@ const routes: Routes = [
           import('./department/department.module').then(
             (m) => m.DepartmentModule
           ),
+        canActivate: [AuthGuard],
+        data: {
+          roles: [ADMIN],
+        },
       },
       {
         path: 'rating',
@@ -35,14 +45,18 @@ const routes: Routes = [
           import('./rating/rating.module').then((m) => m.RatingModule),
       },
       {
-        path: 'user',
+        path: 'users',
         loadChildren: () =>
           import('./user/user.module').then((m) => m.UserModule),
+        canActivate: [AuthGuard],
+        data: {
+          roles: [ADMIN],
+        },
       },
     ],
   },
   {
-    path: 'auth',
+    path: '',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
 ];

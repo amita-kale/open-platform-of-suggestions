@@ -25,7 +25,7 @@ export class LayoutComponent implements OnInit {
   onClickOfLogout() {
     const isconfirmed = confirm('Are you sure you want to logout??');
     if (isconfirmed) {
-      this.router.navigate(['auth/login']);
+      this.router.navigate(['login']);
     }
   }
 }

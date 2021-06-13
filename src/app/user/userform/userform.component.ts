@@ -51,28 +51,14 @@ export class UserformComponent implements OnInit {
         const userModel = this.userModel;
         delete userModel.id;
         this.coreService.createUser(userModel).subscribe(() => {
-          this.router.navigate(['/user/user']);
+          this.router.navigate(['/users/user']);
         });
       } else {
         this.coreService.updateUser(this.userModel).subscribe(() => {
-          this.router.navigate(['/user/user']);
+          this.router.navigate(['/users/user']);
         });
       }
     }
-    // const user = {
-    //   firstname: this.user.firstname,
-    //   role: this.user.role,
-    // };
-
-    // if (this.isEdit == false) {
-    //   this.userService.addUserData(user);
-    // } else {
-    //   this.userService.updateUser(this.routeParam.snapshot.params.id, user);
-    // }
-
-    // this.userService.addUserData(this.user).subscribe(() => {});
-
-    // this.router.navigate(['/user/user']);
   }
 
   goBack() {

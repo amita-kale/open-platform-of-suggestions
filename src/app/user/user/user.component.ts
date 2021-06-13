@@ -23,6 +23,6 @@ export class UserComponent implements OnInit {
   }
 
   editFunction(item) {
-    this.router.navigate(['user/user-form/' + item.id]);
+    this.router.navigate(['users/user-form/' + item.id]);
   }
 }
