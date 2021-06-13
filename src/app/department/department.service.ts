@@ -28,21 +28,26 @@ export class DepartmentService {
   constructor(private httpClient: HttpClient) {}
 
   getData() {
-    return this.httpClient.get('http://localhost:3000/department');
+    return this.httpClient.get('http://localhost:3000/departments');
   }
 
   addData(department) {
+    console.log(department);
+
     return this.httpClient.post(
-      'http://localhost:3000/department/',
+      'http://localhost:3000/departments/',
       department
     );
   }
 
   updateData(id, item) {
-    return this.httpClient.put('http://localhost:3000/department/' + id, item);
+    return this.httpClient.put('http://localhost:3000/departments/' + id, item);
   }
 
   deleteData(id) {
-    return this.httpClient.delete('http://localhost:3000/department/' + id);
+    return this.httpClient.delete('http://localhost:3000/departments/' + id);
+  }
+  getDepartmentName(id) {
+    return this.httpClient.get('http://localhost:3000/departments/' + id);
   }
 }

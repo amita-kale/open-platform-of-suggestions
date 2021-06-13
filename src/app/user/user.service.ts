@@ -12,6 +12,9 @@ export class UserService {
   addUserData(user) {
     return this.httpClient.post('http://localhost:3000/users', user);
   }
+  getRoles() {
+    return this.httpClient.get('http://localhost:3000/roles');
+  }
   getUserInfo() {
     return this.userinfo;
   }

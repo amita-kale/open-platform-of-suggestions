@@ -1,61 +1,114 @@
 <div class="card mt-2">
-  <div class="card-header card-title">
-    Added New user
-  </div>
+  <div class="card-header card-title">Added New user</div>
   <div class="card-body border col-12 p-8">
     <form>
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">FirstName</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.firstname"
-          name="fname">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.firstname"
+          name="fname"
+        />
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">LastName</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.lastname"
-          name="lname">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.lastname"
+          name="lname"
+        />
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Gender</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.gender"
-          name="gender">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.gender"
+          name="gender"
+        />
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Role of User</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.role"
-          name="role">
+
+        <select
+          name="role"
+          id="role"
+          class="form-control"
+          [(ngModel)]="user.role"
+        >
+          <option selected>Select</option>
+          <option *ngFor="let role of roles">{{ role.Name }}</option>
+        </select>
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.email"
-          name="email">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.email"
+          name="email"
+        />
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">password</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.password"
-          name="pw">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.password"
+          name="pw"
+        />
       </div>
 
-      <div class=" mb-3">
+      <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">DepartmentId</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.departmentid"
-          name="deptid">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.departmentid"
+          name="deptid"
+        />
       </div>
 
-      <div class=" mb-3">
-        <label for="exampleInputEmail1" class="form-label">DepartmentName</label>
-        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="user.departmentname"
-          name="deptname">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label"
+          >DepartmentName</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.departmentname"
+          name="deptname"
+        />
       </div>
 
       <button type="button" class="btn btn-primary" (click)="submitClicked()">
-        {{isEdit==true ? 'update' : 'submit'}}</button> &nbsp;
+        {{ isEdit == true ? "update" : "submit" }}
+      </button>
+      &nbsp;
       <button type="reset" class="btn btn-primary" (click)="resetClicked()">
-        Reset</button>
+        Reset
+      </button>
     </form>
   </div>
 </div>

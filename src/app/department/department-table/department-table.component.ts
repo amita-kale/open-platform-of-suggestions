@@ -23,6 +23,9 @@ export class DepartmentTableComponent implements OnInit {
   ngOnInit() {
     // this.departmentData = this.departmentService.getDepartmentInfo();
     // console.log(this.departmentData);
+    this.getData();
+  }
+  getData() {
     this.departmentService.getData().subscribe((response: any) => {
       this.departmentData = response;
     });
@@ -30,13 +33,18 @@ export class DepartmentTableComponent implements OnInit {
 
   deleteClicked(item) {
     this.departmentService.deleteData(item.id).subscribe(() => {
-      // this.getData();
+      this.getData();
     });
   }
 
   editFunction(item) {
     console.log(item);
-
-    this.router.navigate(['department/form/' + item]);
+    // const data = {
+    //   isEdit: 'true',
+    //   id: item,
+    // };
+    const id = item;
+    const isEdit = true;
+    this.router.navigate(['department/form/', id, isEdit]);
   }
 }
