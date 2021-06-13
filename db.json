@@ -5,7 +5,7 @@
     "lastName": "",
     "userName": "admin",
     "password": "admin",
-    "role": "admin",
+    "role": "Admin",
     "departmentId": "admin",
     "departmentName": "admin"
   },
@@ -25,18 +25,64 @@
   },
   "ideas": [
     {
-      "title": "Test",
-      "description": "Test Des",
-      "benefits": "Test bene",
+      "title": "First Idea",
+      "description": "Open your dialpad and dial *121*4# Now, select My account option. Then, select option 3 for last 5 call details Click send and exit. You will get pop up with idea last call details.",
+      "benefits": "An IDEA, we realize compensation is an important factor to staff members and we strive to make sure our strategies around compensation not only align to our organization goals but are also effective in rewarding and recognizing the hard work of our staff.",
       "likes": null,
-      "createdOn": "2021-06-12T12:36:36.075Z",
-      "hodComment": null,
-      "status": "Under Evaluation",
+      "createdOn": "2021-06-13T08:03:11.481Z",
+      "status": "Implemented",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "authorId": 1,
+      "authorName": "Aniket kale",
+      "actions": {
+        "teacher": {
+          "id": "1",
+          "comment": "not acc",
+          "date": "2021-06-13T08:04:31.584Z"
+        },
+        "hod": {
+          "id": "1",
+          "comment": "gfjhgfhjfghj",
+          "date": "2021-06-13T08:04:45.280Z"
+        },
+        "admin": {
+          "id": "0",
+          "comment": "dfgdfg",
+          "date": "2021-06-13T08:19:45.446Z"
+        }
+      },
+      "id": 1
+    },
+    {
+      "title": "sfsdf",
+      "description": "sdf",
+      "benefits": "sdf",
+      "likes": null,
+      "createdOn": "2021-06-13T08:22:55.063Z",
+      "status": "Implemented",
       "departmentId": "1",
       "departmentName": "Computer",
       "authorId": 0,
       "authorName": "Admin ",
-      "id": 1
+      "actions": {
+        "teacher": {
+          "id": "0",
+          "comment": "tyrty",
+          "date": "2021-06-13T08:24:57.810Z"
+        },
+        "hod": {
+          "id": "0",
+          "comment": "bghjkfhj",
+          "date": "2021-06-13T08:31:57.182Z"
+        },
+        "admin": {
+          "id": "0",
+          "comment": "gfg",
+          "date": "2021-06-13T08:32:35.381Z"
+        }
+      },
+      "id": 2
     }
   ],
   "users": [

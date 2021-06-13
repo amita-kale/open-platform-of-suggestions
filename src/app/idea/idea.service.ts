@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Idea } from '../shared/models/idea.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +34,9 @@ export class IdeaService {
 
   createIdea(idea) {
     return this.httpClient.post('http://localhost:3000/ideas/', idea);
+  }
+
+  updateIdea(idea: Idea) {
+    return this.httpClient.put('http://localhost:3000/ideas/' + idea.id, idea);
   }
 }

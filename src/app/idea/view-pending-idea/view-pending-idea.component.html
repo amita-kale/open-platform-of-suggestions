@@ -58,7 +58,7 @@
                 {{idea?.createdOn}}
             </div>
         </div>
-        <div class="row border-bottom mb-2 pb-2">
+        <div class="row" [ngClass]="{'border-bottom mb-2 pb-2': idea?.status !== statuses?.implemented}">
             <div class="col-2">
                 <span class="font-weight-bold">Author Name: </span>
             </div>
@@ -66,28 +66,41 @@
                 {{idea?.authorName}}
             </div>
         </div>
-        <div class="row mt-2">
-            <div class="col">
-                <label for="change-status-to">Change Status To:</label>
-                <select class="form-control" id="change-status-to">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col">
-                <label for="comment">Comment</label>
-                <textarea class="form-control" id="comment" rows="3"></textarea>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col text-right">
-                <button type="button" class="btn btn-success">Success</button>
-            </div>
+        <div *ngIf="idea?.status !== statuses?.implemented">
+            <form (ngSubmit)="onSubmit(ActionForm)" #ActionForm="ngForm" name="ActionForm" id="ActionForm">
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="change-status-to">Change Status To<sup class="text-danger">*</sup> </label>
+                        <select class="form-control" name="change-status-to" id="change-status-to"
+                            [(ngModel)]="actionModel.status" required #status="ngModel">
+                            <option disabled [value]="null">--Select--</option>
+                            <option *ngFor="let status of selectedStatuses" [value]="status">
+                                {{status}}
+                            </option>
+                        </select>
+                        <div *ngIf="status.invalid && (status.dirty || status.touched || ActionForm.submitted)"
+                            class="text-sm text-danger">
+                            <div [hidden]="!status.errors.required">Status is required.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="comment">Comment<sup class="text-danger">*</sup></label>
+                        <textarea required class="form-control" id="comment" name="comment" rows="3"
+                            [(ngModel)]="actionModel.comment" required #comment="ngModel"></textarea>
+                        <div *ngIf="comment.invalid && (comment.dirty || comment.touched || ActionForm.submitted)"
+                            class="text-sm text-danger">
+                            <div [hidden]="!comment.errors.required">Comment is required.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col text-right">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
