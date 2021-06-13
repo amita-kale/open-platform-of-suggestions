@@ -51,11 +51,11 @@ export class UserformComponent implements OnInit {
         const userModel = this.userModel;
         delete userModel.id;
         this.coreService.createUser(userModel).subscribe(() => {
-          this.router.navigate(['/users/user']);
+          this.router.navigate(['/users']);
         });
       } else {
         this.coreService.updateUser(this.userModel).subscribe(() => {
-          this.router.navigate(['/users/user']);
+          this.router.navigate(['/users']);
         });
       }
     }
