@@ -58,12 +58,35 @@
                 {{idea?.createdOn}}
             </div>
         </div>
-        <div class="row">
+        <div class="row border-bottom mb-2 pb-2">
             <div class="col-2">
                 <span class="font-weight-bold">Author Name: </span>
             </div>
             <div class="col">
                 {{idea?.authorName}}
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="change-status-to">Change Status To:</label>
+                <select class="form-control" id="change-status-to">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <label for="comment">Comment</label>
+                <textarea class="form-control" id="comment" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-right">
+                <button type="button" class="btn btn-success">Success</button>
             </div>
         </div>
     </div>
