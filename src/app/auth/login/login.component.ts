@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         ele.userName === this.userlogin.userName &&
         ele.password === this.userlogin.password
     );
-    localStorage.setItem('user', JSON.stringify(user));
+    sessionStorage.setItem('user', JSON.stringify(user));
 
     if (user) {
       this.router.navigate(['/home']);

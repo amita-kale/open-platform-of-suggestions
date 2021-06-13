@@ -24,15 +24,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of users; let i = index">
-          <th>{{ i + 1 }}</th>
+        <tr *ngFor="let user of users; let i = index" [ngClass]="{'d-none': i === 0}">
+          <th>{{ i }}</th>
           <td>{{ user.firstName }} {{ user.lastName }}</td>
           <td>{{ user.gender }}</td>
           <td>{{ user.role }}</td>
           <td>{{ user.userName }}</td>
           <td>{{ user.departmentName }}</td>
           <td>
-            <a (click)="editFunction(i + 1, user)" class="cursor-pointer">
+            <a (click)="editFunction(user)" class="cursor-pointer">
               <span class="text-primary mr-2">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg">

@@ -22,8 +22,7 @@ export class UserComponent implements OnInit {
     // this.userService.delUser(i);
   }
 
-  editFunction(i, item) {
-    console.log('index:', i, item);
-    this.router.navigate(['user/user-form/' + i]);
+  editFunction(item) {
+    this.router.navigate(['user/user-form/' + item.id]);
   }
 }

@@ -28,7 +28,7 @@ export class NewIdeaComponent implements OnInit {
   }
 
   createIdea() {
-    const user: User = JSON.parse(localStorage.getItem('user'));
+    const user: User = JSON.parse(sessionStorage.getItem('user'));
 
     this.ideaModel.authorId = user.id;
     this.ideaModel.authorName = user.firstName + ' ' + user.lastName;

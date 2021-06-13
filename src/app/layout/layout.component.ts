@@ -16,7 +16,7 @@ export class LayoutComponent implements OnInit {
   constructor(private router: Router, private coreService: CoreService) {}
 
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('user'));
+    this.user = JSON.parse(sessionStorage.getItem('user'));
     this.coreService.getRoles().subscribe((roles: Roles) => {
       this.roles = roles;
     });

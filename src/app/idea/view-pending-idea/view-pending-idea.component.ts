@@ -32,7 +32,7 @@ export class ViewPendingIdeaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const user: User = JSON.parse(localStorage.getItem('user'));
+    const user: User = JSON.parse(sessionStorage.getItem('user'));
 
     const id = this.route.snapshot.params.id;
     this.ideaService.getIdeaById(id).subscribe((response: Idea) => {
@@ -97,7 +97,7 @@ export class ViewPendingIdeaComponent implements OnInit {
   onSubmit(form) {
     form.submitted = true;
     if (form.valid) {
-      const user: User = JSON.parse(localStorage.getItem('user'));
+      const user: User = JSON.parse(sessionStorage.getItem('user'));
       if (
         this.idea.status === this.statuses.underEvaluation ||
         this.idea.status === this.statuses.ideaAlreadyExists ||

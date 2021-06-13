@@ -26,7 +26,7 @@ export class MyIdeaComponent implements OnInit {
   }
 
   getIdeas(status) {
-    const user: User = JSON.parse(localStorage.getItem('user'));
+    const user: User = JSON.parse(sessionStorage.getItem('user'));
 
     this.homeService.getIdeas().subscribe((response: Array<Idea>) => {
       this.ideas = response.filter(

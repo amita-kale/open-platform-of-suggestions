@@ -21,7 +21,7 @@ export class PendingForAccepatanceComponent implements OnInit {
   constructor(private ideaService: IdeaService, private router: Router) {}
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('user'));
+    this.user = JSON.parse(sessionStorage.getItem('user'));
 
     this.ideaService.getStatuses().subscribe((response: any) => {
       this.ideaService.getRoles().subscribe((roles: Roles) => {

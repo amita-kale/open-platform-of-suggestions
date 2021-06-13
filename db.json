@@ -77,6 +77,17 @@
   ],
   "users": [
     {
+      "id": 0,
+      "firstName": "Admin",
+      "lastName": "",
+      "gender": "",
+      "role": "Admin",
+      "userName": "admin",
+      "password": "admin",
+      "departmentId": "0",
+      "departmentName": ""
+    },
+    {
       "id": 1,
       "firstName": "Aniket",
       "lastName": "kale",
