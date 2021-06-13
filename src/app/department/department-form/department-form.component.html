@@ -5,17 +5,9 @@
   <div class="card-body border col-12 p-8">
     <form>
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label"
-          >department Name</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="departmentName"
-          name="name"
-        />
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="departmentName"
+          name="name" />
       </div>
 
       <!-- <div class="mb-3">
@@ -29,11 +21,7 @@
       </button>
       &nbsp;
       <button type="reset" class="btn btn-primary">Reset</button>
-      <button
-        type="button"
-        class="btn btn-secondary ml-2"
-        [routerLink]="['/department/table']"
-      >
+      <button type="button" class="btn btn-secondary ml-2" [routerLink]="['/department/table']">
         Back
       </button>
     </form>

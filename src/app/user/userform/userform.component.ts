@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from '../user.service';
+import { CoreService } from 'src/app/core/services/core.service';
+import { Department } from 'src/app/shared/models/department.model';
+import { Roles } from 'src/app/shared/models/roles.model';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-userform',
@@ -8,50 +11,54 @@ import { UserService } from '../user.service';
   styleUrls: ['./userform.component.css'],
 })
 export class UserformComponent implements OnInit {
-  isEdit = false;
-  roles = new Array();
-  index = -1;
-  user = {
-    id: '',
-    firstname: '',
-    lastname: '',
-    gender: '',
-    role: '',
-    email: '',
-    password: null,
-    departmentid: null,
-    departmentname: '',
-  };
+  isNew = true;
+  userModel: User = new User();
+  roles: Roles;
+  departments: Array<Department> = [];
 
   constructor(
-    private userService: UserService,
+    private coreService: CoreService,
     private router: Router,
     private routeParam: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getRoles();
-
     if (this.routeParam.snapshot.params.id) {
-      this.isEdit = true;
-      const stud = this.userService.getSpecificUserByIndex(
-        this.routeParam.snapshot.params.id
-      );
-
-      // this.user = {
-      //   firstname: stud.firstname,
-      //   role: stud.role,
-      // };
+      this.isNew = false;
+      this.getUser(this.routeParam.snapshot.params.id);
     }
-  }
-  getRoles() {
-    this.userService.getRoles().subscribe((res: any) => {
-      this.roles = res;
-      console.log(this.roles);
+
+    this.coreService.getRoles().subscribe((roles: Roles) => {
+      this.roles = roles;
+    });
+
+    this.coreService.getDepartments().subscribe((response: any) => {
+      this.departments = response;
     });
   }
 
-  submitClicked() {
+  getUser(id) {
+    this.coreService.getUser(id).subscribe((user: User) => {
+      this.userModel = user;
+      console.log(this.userModel);
+    });
+  }
+
+  submitClicked(form) {
+    form.submitted = true;
+    if (form.valid) {
+      if (this.isNew) {
+        const userModel = this.userModel;
+        delete userModel.id;
+        this.coreService.createUser(userModel).subscribe(() => {
+          this.router.navigate(['/user/user']);
+        });
+      } else {
+        this.coreService.updateUser(this.userModel).subscribe(() => {
+          this.router.navigate(['/user/user']);
+        });
+      }
+    }
     // const user = {
     //   firstname: this.user.firstname,
     //   role: this.user.role,
@@ -63,12 +70,12 @@ export class UserformComponent implements OnInit {
     //   this.userService.updateUser(this.routeParam.snapshot.params.id, user);
     // }
 
-    this.userService.addUserData(this.user).subscribe(() => {});
+    // this.userService.addUserData(this.user).subscribe(() => {});
 
-    this.router.navigate(['/user/user']);
+    // this.router.navigate(['/user/user']);
   }
-  resetClicked() {
-    this.isEdit = false;
-    this.index = -1;
+
+  goBack() {
+    history.back();
   }
 }

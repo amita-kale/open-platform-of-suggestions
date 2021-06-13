@@ -17,12 +17,9 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
-    console.log(this.user);
-    
     this.coreService.getRoles().subscribe((roles: Roles) => {
       this.roles = roles;
     });
-    
   }
 
   onClickOfLogout() {

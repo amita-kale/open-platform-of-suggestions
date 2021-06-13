@@ -77,24 +77,13 @@
   ],
   "users": [
     {
-      "id": 0,
-      "firstName": "Admin",
-      "lastName": "",
-      "gender": "",
-      "role": "Admin",
-      "userName": "admin",
-      "password": "admin",
-      "departmentId": "admin",
-      "departmentName": "admin"
-    },
-    {
       "id": 1,
       "firstName": "Aniket",
       "lastName": "kale",
-      "gender": "male",
+      "gender": "Male",
       "role": "Teacher",
       "userName": "aniket",
-      "password": "123",
+      "password": "1234",
       "departmentId": "1",
       "departmentName": "Computer"
     }
@@ -109,8 +98,8 @@
       "name": "Machanical"
     },
     {
-      "id": 3,
-      "name": "E % Tc"
+      "name": "E & Tc",
+      "id": 3
     },
     {
       "id": 4,

@@ -1,113 +1,98 @@
 <div class="card mt-2">
-  <div class="card-header card-title">Added New user</div>
+  <div class="card-header card-title">
+    <svg (click)="goBack()" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+      class="cursor-pointer svg-inline--fa fa-arrow-circle-left fa-w-16" data-icon="arrow-circle-left" data-prefix="fas"
+      viewBox="0 0 512 512">
+      <defs />
+      <path fill="currentColor"
+        d="M256 504a248 248 0 110-496 248 248 0 010 496zm29-144l-76-72h183c13 0 24-11 24-24v-16c0-13-11-24-24-24H209l76-72c10-10 10-25 0-35l-11-11c-9-9-24-9-34 0L108 239c-10 9-10 25 0 34l132 133c10 9 25 9 34 0l11-11c10-10 10-25 0-35z" />
+    </svg>
+
+    {{ isNew ? "Add New User" : "Update User" }}
+  </div>
   <div class="card-body border col-12 p-8">
-    <form>
+    <form (ngSubmit)="submitClicked(UserForm)" #UserForm="ngForm" name="UserForm" id="UserForm">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">FirstName</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.firstname"
-          name="fname"
-        />
+        <label for="exampleInputEmail1" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="userModel.firstName"
+          name="fname" required #firstName="ngModel" />
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!firstName.errors.required">First Name is required.</div>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">LastName</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.lastname"
-          name="lname"
-        />
+        <label for="exampleInputEmail1" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="userModel.lastName"
+          name="lname" required #lastName="ngModel" />
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!lastName.errors.required">lastName is required.</div>
+        </div>
       </div>
-
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Gender</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.gender"
-          name="gender"
-        />
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Role of User</label>
-
-        <select
-          name="role"
-          id="role"
-          class="form-control"
-          [(ngModel)]="user.role"
-        >
-          <option selected>Select</option>
-          <option *ngFor="let role of roles">{{ role.Name }}</option>
+        <select name="gender" id="gender" class="form-control" [(ngModel)]="userModel.gender" required
+          #gender="ngModel">
+          <option [value]="null" disabled>--Select--</option>
+          <option>Male</option>
+          <option>Female</option>
         </select>
+        <div *ngIf="gender.invalid && (gender.dirty || gender.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!gender.errors.required">gender is required.</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Role</label>
+        <select name="role" id="role" class="form-control" [(ngModel)]="userModel.role" required #role="ngModel">
+          <option [value]="null" disabled>--Select--</option>
+          <option *ngFor="let role of roles | keyvalue;let i = index" [value]="role.value" [disabled]="i === 0">{{
+            role.value }}</option>
+        </select>
+        <div *ngIf="role.invalid && (role.dirty || role.touched || UserForm.submitted)" class="text-sm text-danger">
+          <div [hidden]="!role.errors.required">role is required.</div>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.email"
-          name="email"
-        />
+        <label for="exampleInputEmail1" class="form-label">UserName/Email</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="userModel.userName"
+          name="email" required #userName="ngModel" />
+        <div *ngIf="userName.invalid && (userName.dirty || userName.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!userName.errors.required">userName is required.</div>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">password</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.password"
-          name="pw"
-        />
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" [(ngModel)]="userModel.password"
+          name="pw" required #password="ngModel" />
+        <div *ngIf="password.invalid && (password.dirty || password.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!password.errors.required">password is required.</div>
+        </div>
       </div>
 
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">DepartmentId</label>
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.departmentid"
-          name="deptid"
-        />
+        <label for="department" class="form-label">Department</label>
+        <select name="department" class="form-control" id="department" [(ngModel)]="userModel.departmentId" required
+          #department="ngModel">
+          <option [value]="null" disabled>--Select--</option>
+          <option *ngFor="let department of departments" [value]="department.id">
+            {{ department.name }}
+          </option>
+        </select>
+        <div *ngIf="department.invalid && (department.dirty || department.touched || UserForm.submitted)"
+          class="text-sm text-danger">
+          <div [hidden]="!department.errors.required">department is required.</div>
+        </div>
       </div>
 
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label"
-          >DepartmentName</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="name"
-          aria-describedby="emailHelp"
-          [(ngModel)]="user.departmentname"
-          name="deptname"
-        />
-      </div>
-
-      <button type="button" class="btn btn-primary" (click)="submitClicked()">
-        {{ isEdit == true ? "update" : "submit" }}
-      </button>
-      &nbsp;
-      <button type="reset" class="btn btn-primary" (click)="resetClicked()">
-        Reset
+      <button type="submit" class="btn btn-primary">
+        {{ isNew == true ? "Submit" : "Update" }}
       </button>
     </form>
   </div>
