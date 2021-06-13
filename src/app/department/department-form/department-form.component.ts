@@ -45,34 +45,47 @@ export class DepartmentFormComponent implements OnInit {
   //  }
 
   //////////////////////////////////////////////////////
-  isEdit = false;
-  indexOfEdit = -1;
-  department = {
-    id: '',
-    name: '',
-  };
-
+  isEdit: string;
+  id: any;
+  departmentName: string;
   constructor(
     private departmentService: DepartmentService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.id = this.route.snapshot.params.id;
+    this.isEdit = this.route.snapshot.params.isEdit;
+    console.log(this.route.snapshot);
+    if (this.isEdit === 'true') {
+      this.getDepartmentName(this.id);
+    }
+  }
+  getDepartmentName(id) {
+    console.log('inside method');
 
+    this.departmentService.getDepartmentName(id).subscribe((res: any) => {
+      this.departmentName = res.name;
+      console.log(res);
+    });
+  }
   submitClicked() {
-    console.log(this.department);
-    if (this.isEdit === true) {
-      console.log(this.indexOfEdit);
-
-      this.departmentService
-        .updateData(this.indexOfEdit, this.department)
-        .subscribe(() => {
-          //     this.getData();
-          this.isEdit = false;
-        });
+    if (this.isEdit == 'true') {
+      const data = {
+        name: this.departmentName,
+      };
+      this.departmentService.updateData(this.id, data).subscribe(() => {
+        //     this.getData();
+        this.isEdit = 'false';
+        this.router.navigate(['/department/table']);
+      });
     } else {
-      this.departmentService.addData(this.department).subscribe(() => {
-        this.department.name = '';
+      console.log(this.departmentName);
+      const data = {
+        name: this.departmentName,
+      };
+      this.departmentService.addData(data).subscribe(() => {
         this.router.navigate(['/department/table']);
       });
     }

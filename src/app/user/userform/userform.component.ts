@@ -9,6 +9,7 @@ import { UserService } from '../user.service';
 })
 export class UserformComponent implements OnInit {
   isEdit = false;
+  roles = new Array();
   index = -1;
   user = {
     id: '',
@@ -29,6 +30,8 @@ export class UserformComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getRoles();
+
     if (this.routeParam.snapshot.params.id) {
       this.isEdit = true;
       const stud = this.userService.getSpecificUserByIndex(
@@ -40,6 +43,12 @@ export class UserformComponent implements OnInit {
       //   role: stud.role,
       // };
     }
+  }
+  getRoles() {
+    this.userService.getRoles().subscribe((res: any) => {
+      this.roles = res;
+      console.log(this.roles);
+    });
   }
 
   submitClicked() {

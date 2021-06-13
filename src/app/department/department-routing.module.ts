@@ -6,20 +6,20 @@ import { DepartmentTableComponent } from './department-table/department-table.co
 const routes: Routes = [
   {
     path: 'table',
-    component: DepartmentTableComponent
+    component: DepartmentTableComponent,
   },
   {
     path: 'form',
-    component: DepartmentFormComponent
+    component: DepartmentFormComponent,
   },
   {
-    path: 'form/:id',
-    component: DepartmentFormComponent
+    path: 'form/:id/:isEdit',
+    component: DepartmentFormComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DepartmentRoutingModule { }
+export class DepartmentRoutingModule {}

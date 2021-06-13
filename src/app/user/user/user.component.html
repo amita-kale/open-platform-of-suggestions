@@ -1,4 +1,4 @@
-<p>Users-List </p>
+<!-- <p>Users-List </p>
 <button type="button" class="btn btn-primary" [routerLink]="['/user/user-form']">add New User</button>
 
 
@@ -43,4 +43,92 @@
   </tr>
 
 
-</table>
+</table> -->
+<div class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <div class="">User List</div>
+      <div class="">
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['/user/user-form']"
+        >
+          Add User
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <table class="table p-3 table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sr.No.</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Gender</th>
+          <th>Role of User</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Department Id</th>
+          <th>Department Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userdata; let i = index">
+          <th>{{ i + 1 }}</th>
+          <td>{{ user.FirstName }}</td>
+          <td>{{ user.LastName }}</td>
+          <td>{{ user.gender }}</td>
+          <td>{{ user.role }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.departmentId }}</td>
+          <td>{{ user.departmentName }}</td>
+          <td>
+            <a (click)="editFunction(i + 1, user)" class="cursor-pointer">
+              <span class="text-primary mr-2">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+            <a (click)="deleteClicked(user)" class="cursor-pointer">
+              <span class="text-danger">
+                <svg
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  ></path>
+                </svg>
+              </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
