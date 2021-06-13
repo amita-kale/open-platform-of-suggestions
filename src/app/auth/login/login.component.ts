@@ -27,9 +27,6 @@ export class LoginComponent implements OnInit {
     this.authService.getUsers().subscribe((response: any) => {
       this.users = response;
     });
-    this.authService.getAdminDetails().subscribe((response: any) => {
-      this.adminDetails = response;
-    });
   }
   loginClicked() {
     const user = this.users.find(
@@ -37,16 +34,9 @@ export class LoginComponent implements OnInit {
         ele.userName === this.userlogin.userName &&
         ele.password === this.userlogin.password
     );
-    const isAdminUser =
-      this.adminDetails.userName === this.userlogin.userName &&
-      this.adminDetails.password === this.userlogin.password;
+    localStorage.setItem('user', JSON.stringify(user));
 
-    if (isAdminUser) {
-      localStorage.setItem('user', JSON.stringify(this.adminDetails));
-    } else if (user) {
-      localStorage.setItem('user', JSON.stringify(user));
-    }
-    if (user || isAdminUser) {
+    if (user) {
       this.router.navigate(['/home']);
     } else {
       alert('username  and password is incorrect');

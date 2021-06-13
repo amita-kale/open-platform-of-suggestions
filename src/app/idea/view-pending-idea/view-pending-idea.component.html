@@ -58,12 +58,60 @@
                 {{idea?.createdOn}}
             </div>
         </div>
-        <div class="row" [ngClass]="{'border-bottom mb-2 pb-2': idea?.status !== statuses?.implemented}">
+        <div class="row border-bottom mb-2 pb-2">
             <div class="col-2">
                 <span class="font-weight-bold">Author Name: </span>
             </div>
             <div class="col">
                 {{idea?.authorName}}
+            </div>
+        </div>
+        <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.teacher?.id">
+            <div class="col-2">
+                <span class="font-weight-bold">Teacher Action: </span>
+            </div>
+            <div class="col">
+                <div>
+                    <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.teacher?.comment}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.teacher?.date}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Name:</span> {{teacherName}}
+                </div>
+            </div>
+        </div>
+        <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.hod?.id">
+            <div class="col-2">
+                <span class="font-weight-bold">HOD Action: </span>
+            </div>
+            <div class="col">
+                <div>
+                    <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.hod?.comment}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.hod?.date}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Name:</span> {{hodName}}
+                </div>
+            </div>
+        </div>
+        <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.admin?.id">
+            <div class="col-2">
+                <span class="font-weight-bold">Admin Action: </span>
+            </div>
+            <div class="col">
+                <div>
+                    <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.admin?.comment}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.admin?.date}}
+                </div>
+                <div>
+                    <span class="font-italic font-weight-light">Name:</span> {{adminName}}
+                </div>
             </div>
         </div>
         <div *ngIf="idea?.status !== statuses?.implemented">

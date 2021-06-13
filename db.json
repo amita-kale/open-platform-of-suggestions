@@ -1,14 +1,4 @@
 {
-  "admin": {
-    "id": 0,
-    "firstName": "Admin",
-    "lastName": "",
-    "userName": "admin",
-    "password": "admin",
-    "role": "Admin",
-    "departmentId": "admin",
-    "departmentName": "admin"
-  },
   "statuses": {
     "underEvaluation": "Under Evaluation",
     "ideaAlreadyExists": "Idea Already Exists",
@@ -86,6 +76,17 @@
     }
   ],
   "users": [
+    {
+      "id": 0,
+      "firstName": "Admin",
+      "lastName": "",
+      "gender": "",
+      "role": "Admin",
+      "userName": "admin",
+      "password": "admin",
+      "departmentId": "admin",
+      "departmentName": "admin"
+    },
     {
       "id": 1,
       "firstName": "Aniket",

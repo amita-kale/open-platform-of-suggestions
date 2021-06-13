@@ -20,6 +20,9 @@ export class ViewPendingIdeaComponent implements OnInit {
     status: null,
     comment: null,
   };
+  teacherName: string;
+  hodName: string;
+  adminName: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +37,7 @@ export class ViewPendingIdeaComponent implements OnInit {
     const id = this.route.snapshot.params.id;
     this.ideaService.getIdeaById(id).subscribe((response: Idea) => {
       this.idea = response;
+      this.getUsers();
       this.coreService.getStatuses().subscribe((statuses: Statuses) => {
         this.coreService.getRoles().subscribe((roles: Roles) => {
           this.statuses = statuses;
@@ -71,12 +75,29 @@ export class ViewPendingIdeaComponent implements OnInit {
     });
   }
 
+  getUsers() {
+    this.ideaService.getUsers().subscribe((users: Array<User>) => {
+      const teacherUser = users.find(
+        (user) => user.id === +this.idea?.actions?.teacher?.id
+      );
+      this.teacherName = `${teacherUser?.firstName} ${teacherUser?.lastName}`;
+
+      const hodUser = users.find(
+        (user) => user.id === +this.idea?.actions?.hod?.id
+      );
+      this.hodName = `${hodUser?.firstName} ${hodUser?.lastName}`;
+
+      const adminUser = users.find(
+        (user) => user.id === +this.idea?.actions?.admin?.id
+      );
+      this.adminName = `${adminUser?.firstName} ${adminUser?.lastName}`;
+    });
+  }
+
   onSubmit(form) {
     form.submitted = true;
     if (form.valid) {
       const user: User = JSON.parse(localStorage.getItem('user'));
-
-      debugger;
       if (
         this.idea.status === this.statuses.underEvaluation ||
         this.idea.status === this.statuses.ideaAlreadyExists ||

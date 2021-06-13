@@ -13,7 +13,4 @@ export class AuthService {
   getUsers() {
     return this.httpClient.get('http://localhost:3000/users');
   }
-  getAdminDetails() {
-    return this.httpClient.get('http://localhost:3000/admin');
-  }
 }

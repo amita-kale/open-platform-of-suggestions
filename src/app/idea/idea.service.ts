@@ -17,7 +17,7 @@ export class IdeaService {
   }
 
   getUsers() {
-    return this.httpClient.get('http://localhost:3000/statuses/');
+    return this.httpClient.get('http://localhost:3000/users/');
   }
 
   getDepartments() {
