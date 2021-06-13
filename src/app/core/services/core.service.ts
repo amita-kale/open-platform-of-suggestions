@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Idea } from '../shared/models/idea.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class IdeaService {
+export class CoreService {
+
   constructor(private httpClient: HttpClient) {}
 
   getStatuses() {
@@ -17,7 +17,7 @@ export class IdeaService {
   }
 
   getUsers() {
-    return this.httpClient.get('http://localhost:3000/users/');
+    return this.httpClient.get('http://localhost:3000/statuses/');
   }
 
   getDepartments() {
@@ -28,15 +28,4 @@ export class IdeaService {
     return this.httpClient.get('http://localhost:3000/ideas/');
   }
 
-  getIdeaById(id: number) {
-    return this.httpClient.get('http://localhost:3000/ideas/' + id);
-  }
-
-  createIdea(idea) {
-    return this.httpClient.post('http://localhost:3000/ideas/', idea);
-  }
-
-  updateIdea(idea: Idea) {
-    return this.httpClient.put('http://localhost:3000/ideas/' + idea.id, idea);
-  }
 }

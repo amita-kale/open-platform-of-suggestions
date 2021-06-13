@@ -2,7 +2,7 @@ export interface Statuses {
   underEvaluation: string;
   ideaAlreadyExists: string;
   acceptedByTeacher: string;
-  acceptedByHOD: string;
+  notAcceptedForImplementation: string;
   acceptedForImplementation: string;
   implemented: string;
 }

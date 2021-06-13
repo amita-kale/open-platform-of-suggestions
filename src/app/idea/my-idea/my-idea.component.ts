@@ -29,7 +29,9 @@ export class MyIdeaComponent implements OnInit {
     const user: User = JSON.parse(localStorage.getItem('user'));
 
     this.homeService.getIdeas().subscribe((response: Array<Idea>) => {
-      this.ideas = response.filter(idea => idea.status === status && user.id === idea.authorId);
+      this.ideas = response.filter(
+        (idea) => idea.status === status && user.id === idea.authorId
+      );
     });
   }
 

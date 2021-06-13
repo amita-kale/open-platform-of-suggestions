@@ -5,6 +5,7 @@ import { NewIdeaComponent } from './new-idea/new-idea.component';
 import { PendingForAccepatanceComponent } from './pending-for-accepatance/pending-for-accepatance.component';
 import { ViewAllIdeasComponent } from './view-all-ideas/view-all-ideas.component';
 import { ViewIdeaComponent } from './view-idea/view-idea.component';
+import { ViewPendingIdeaComponent } from './view-pending-idea/view-pending-idea.component';
 
 const routes: Routes = [
   {
@@ -25,9 +26,12 @@ const routes: Routes = [
   },
   {
     path: 'view-idea/:id',
-    component: ViewIdeaComponent
+    component: ViewIdeaComponent,
   },
-
+  {
+    path: 'view-pending-idea/:id',
+    component: ViewPendingIdeaComponent,
+  },
   {
     path: 'new-idea/:ui', //ui is random variable you can take anything...and : for make this variable dynamic.
     component: NewIdeaComponent,
@@ -42,4 +46,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class IdeaRoutingModule { }
+export class IdeaRoutingModule {}

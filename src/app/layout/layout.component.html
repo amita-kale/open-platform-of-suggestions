@@ -1,23 +1,12 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="40"
-        width="40"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="{2}"
-          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-        />
+      <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}"
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
-      Open Platform of Suggestions</a
-    >
+      Open Platform of Suggestions</a>
     <span>
       <!-- <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" height="40" width="40"
         viewBox="0 0 24 24" stroke="currentColor">
@@ -34,53 +23,32 @@
 <div class="row">
   <div class="col-1">
     <div class="row bg-light">
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/home']"
-        routerLinkActive="active-link"
-      >
+      <div class="border col-12 p-4 text-center cursor-pointer menu-hover" [routerLink]="['/home']"
+        routerLinkActive="active-link">
         Home
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/idea/my-idea']"
-        routerLinkActive="active-link"
-      >
+      <div class="border col-12 p-4 text-center cursor-pointer menu-hover" [routerLink]="['/idea/my-idea']"
+        routerLinkActive="active-link">
         My Idea
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/idea/new-idea']"
-        routerLinkActive="active-link"
-      >
+      <div class="border col-12 p-4 text-center cursor-pointer menu-hover" [routerLink]="['/idea/new-idea']"
+        routerLinkActive="active-link">
         New Idea
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/idea/pending-for-accepatance']"
-        routerLinkActive="active-link"
-      >
+      <div *ngIf="user?.role !== roles?.studentRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
+        [routerLink]="['/idea/pending-for-accepatance']" routerLinkActive="active-link">
         Pending for Acceptance
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/rating/rating']"
-        routerLinkActive="active-link"
-      >
+      <div class="border col-12 p-4 text-center cursor-pointer menu-hover" [routerLink]="['/rating/rating']"
+        routerLinkActive="active-link">
         Rating
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/department/table']"
-        routerLinkActive="active-link"
-      >
+      <div *ngIf="user?.role === roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
+        [routerLink]="['/department/table']" routerLinkActive="active-link">
         Department
       </div>
-      <div
-        class="border col-12 p-4 text-center cursor-pointer menu-hover"
-        [routerLink]="['/user/user']"
-        routerLinkActive="active-link"
-      >
+      <div *ngIf="user?.role === roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
+        [routerLink]="['/user/user']" routerLinkActive="active-link">
         User
       </div>
     </div>

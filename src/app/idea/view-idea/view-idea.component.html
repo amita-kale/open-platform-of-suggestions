@@ -7,9 +7,9 @@
       <path fill="currentColor"
         d="M256 504a248 248 0 110-496 248 248 0 010 496zm29-144l-76-72h183c13 0 24-11 24-24v-16c0-13-11-24-24-24H209l76-72c10-10 10-25 0-35l-11-11c-9-9-24-9-34 0L108 239c-10 9-10 25 0 34l132 133c10 9 25 9 34 0l11-11c10-10 10-25 0-35z" />
     </svg>
-    View Idea: <span class="font-weight-bold">{{idea.title}}</span>
+    View Idea: <span class="font-weight-bold">{{idea?.title}}</span>
     <span class="float-right">
-      {{idea.likes}}
+      {{idea?.likes}}
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-hand-thumbs-up cursor-pointer thumbs-hover" viewBox="0 0 16 16">
         <path
@@ -23,7 +23,7 @@
         <span class="font-weight-bold">Description: </span>
       </div>
       <div class="col">
-        {{idea.description}}
+        {{idea?.description}}
       </div>
     </div>
     <div class="row border-bottom mb-2 pb-2">
@@ -31,7 +31,7 @@
         <span class="font-weight-bold">Benefits: </span>
       </div>
       <div class="col">
-        {{idea.benefits}}
+        {{idea?.benefits}}
       </div>
     </div>
     <div class="row border-bottom mb-2 pb-2">
@@ -39,7 +39,7 @@
         <span class="font-weight-bold">Status: </span>
       </div>
       <div class="col">
-        {{idea.status}}
+        {{idea?.status}}
       </div>
     </div>
     <div class="row border-bottom mb-2 pb-2">
@@ -47,7 +47,7 @@
         <span class="font-weight-bold">Submitted to Dept: </span>
       </div>
       <div class="col">
-        {{idea.departmentName}}
+        {{idea?.departmentName}}
       </div>
     </div>
     <div class="row border-bottom mb-2 pb-2">
@@ -55,15 +55,63 @@
         <span class="font-weight-bold">Created Date: </span>
       </div>
       <div class="col">
-        {{idea.createdOn}}
+        {{idea?.createdOn}}
       </div>
     </div>
-    <div class="row">
+    <div class="row border-bottom mb-2 pb-2">
       <div class="col-2">
         <span class="font-weight-bold">Author Name: </span>
       </div>
       <div class="col">
-        {{idea.authorName}}
+        {{idea?.authorName}}
+      </div>
+    </div>
+    <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.teacher?.id">
+      <div class="col-2">
+        <span class="font-weight-bold">Teacher Action: </span>
+      </div>
+      <div class="col">
+        <div>
+          <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.teacher?.comment}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.teacher?.date}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Name:</span> {{teacherName}}
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.hod?.id">
+      <div class="col-2">
+        <span class="font-weight-bold">HOD Action: </span>
+      </div>
+      <div class="col">
+        <div>
+          <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.hod?.comment}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.hod?.date}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Name:</span> {{hodName}}
+        </div>
+      </div>
+    </div>
+    <div class="row border-bottom mb-2 pb-2" *ngIf="idea?.actions?.admin?.id">
+      <div class="col-2">
+        <span class="font-weight-bold">Admin Action: </span>
+      </div>
+      <div class="col">
+        <div>
+          <span class="font-italic font-weight-light">Comment:</span> {{idea?.actions?.admin?.comment}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Date:</span> {{idea?.actions?.admin?.date}}
+        </div>
+        <div>
+          <span class="font-italic font-weight-light">Name:</span> {{adminName}}
+        </div>
       </div>
     </div>
   </div>

@@ -5,12 +5,28 @@ export class Idea {
   benefits: string;
   likes: string;
   createdOn: string;
-  hodComment: string;
   status: string;
   departmentId: number;
   departmentName: string;
   authorId: number;
   authorName: string;
+  actions: {
+    teacher: {
+      id: string;
+      comment: string;
+      date: string;
+    };
+    hod: {
+      id: string;
+      comment: string;
+      date: string;
+    };
+    admin: {
+      id: string;
+      comment: string;
+      date: string;
+    };
+  };
 
   constructor() {
     this.id = null;
@@ -19,11 +35,27 @@ export class Idea {
     this.benefits = null;
     this.likes = null;
     this.createdOn = null;
-    this.hodComment = null;
     this.status = null;
     this.departmentId = null;
     this.departmentName = null;
     this.authorId = null;
     this.authorName = null;
+    this.actions = {
+      teacher: {
+        id: '',
+        comment: '',
+        date: '',
+      },
+      hod: {
+        id: '',
+        comment: '',
+        date: '',
+      },
+      admin: {
+        id: '',
+        comment: '',
+        date: '',
+      },
+    };
   }
 }
