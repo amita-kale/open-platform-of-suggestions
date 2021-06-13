@@ -38,8 +38,9 @@ export class PendingForAccepatanceComponent implements OnInit {
       this.ideas = response.filter(
         (idea) =>
           idea.status === status &&
-          (this.user.role === this.roles.adminRole ??
-            +idea.departmentId === +this.user.departmentId)
+          (this.user.role === this.roles.adminRole
+            ? true
+            : +idea.departmentId === +this.user.departmentId)
       );
     });
   }

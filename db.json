@@ -73,6 +73,156 @@
         }
       },
       "id": 2
+    },
+    {
+      "title": "Test Idea",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "benefits": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "likes": null,
+      "createdOn": "2021-06-13T16:33:59.206Z",
+      "status": "Under Evaluation",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "actions": {
+        "teacher": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "hod": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "admin": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        }
+      },
+      "id": 3
+    },
+    {
+      "title": "communication",
+      "description": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "benefits": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "likes": null,
+      "createdOn": "2021-06-13T16:34:42.218Z",
+      "status": "Under Evaluation",
+      "departmentId": "2",
+      "departmentName": "Machanical",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "actions": {
+        "teacher": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "hod": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "admin": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        }
+      },
+      "id": 4
+    },
+    {
+      "title": "Soft Skills",
+      "description": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "benefits": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "likes": null,
+      "createdOn": "2021-06-13T16:37:25.915Z",
+      "status": "Under Evaluation",
+      "departmentId": "4",
+      "departmentName": "Civil",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "actions": {
+        "teacher": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "hod": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "admin": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        }
+      },
+      "id": 5
+    },
+    {
+      "title": "Home Work",
+      "description": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "benefits": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "likes": null,
+      "createdOn": "2021-06-13T16:37:42.453Z",
+      "status": "Under Evaluation",
+      "departmentId": "3",
+      "departmentName": "E & Tc",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "actions": {
+        "teacher": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "hod": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "admin": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        }
+      },
+      "id": 6
+    },
+    {
+      "title": "Water Tanks",
+      "description": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "benefits": "Lorem Ipsum is simply a dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "likes": null,
+      "createdOn": "2021-06-13T16:38:16.060Z",
+      "status": "Implemented",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "authorId": 0,
+      "authorName": "Admin ",
+      "actions": {
+        "teacher": {
+          "id": "1",
+          "comment": "Good idea",
+          "date": "2021-06-13T16:56:53.361Z"
+        },
+        "hod": {
+          "id": "2",
+          "comment": "Very nice Idea. Please admin accept this. this is very nice",
+          "date": "2021-06-13T17:00:15.444Z"
+        },
+        "admin": {
+          "id": "0",
+          "comment": "hgk",
+          "date": "2021-06-13T17:04:25.339Z"
+        }
+      },
+      "id": 7
     }
   ],
   "users": [
@@ -97,6 +247,28 @@
       "password": "1234",
       "departmentId": "1",
       "departmentName": "Computer"
+    },
+    {
+      "firstName": "Amita",
+      "lastName": "Kale",
+      "gender": "Female",
+      "role": "HOD",
+      "userName": "amita",
+      "password": "amita",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "id": 2
+    },
+    {
+      "firstName": "Rutika",
+      "lastName": "Jadhav",
+      "gender": "Female",
+      "role": "Student",
+      "userName": "rutika",
+      "password": "rutika",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "id": 3
     }
   ],
   "departments": [

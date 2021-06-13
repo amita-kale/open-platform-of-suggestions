@@ -47,6 +47,10 @@ export class UserformComponent implements OnInit {
   submitClicked(form) {
     form.submitted = true;
     if (form.valid) {
+      this.userModel.departmentName =
+        this.departments.find(
+          (dept) => dept.id === +this.userModel.departmentId
+        )?.name ?? '';
       if (this.isNew) {
         const userModel = this.userModel;
         delete userModel.id;
