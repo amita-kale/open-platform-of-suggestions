@@ -30,12 +30,16 @@ export class PendingForAccepatanceComponent implements OnInit {
 
   getIdeas(status) {
     this.ideaService.getIdeas().subscribe((response: Array<Idea>) => {
-      this.ideas = response.filter((idea) => idea.status === status);
+      this.ideas = response.filter(
+        (idea) =>
+          idea.status === status &&
+          +idea.departmentId === +this.user.departmentId
+      );
     });
   }
 
   viewIdea(ideaId) {
-    this.router.navigate(['/idea/view-idea/' + ideaId]);
+    this.router.navigate(['/idea/view-pending-idea/' + ideaId]);
   }
 
   statusClicked(status) {

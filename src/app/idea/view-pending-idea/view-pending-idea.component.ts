@@ -4,11 +4,11 @@ import { Idea } from 'src/app/shared/models/idea.model';
 import { IdeaService } from '../idea.service';
 
 @Component({
-  selector: 'app-view-idea',
-  templateUrl: './view-idea.component.html',
-  styleUrls: ['./view-idea.component.css'],
+  selector: 'app-view-pending-idea',
+  templateUrl: './view-pending-idea.component.html',
+  styleUrls: ['./view-pending-idea.component.css'],
 })
-export class ViewIdeaComponent implements OnInit {
+export class ViewPendingIdeaComponent implements OnInit {
   idea: Idea;
 
   constructor(

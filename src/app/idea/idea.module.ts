@@ -8,14 +8,17 @@ import { NewIdeaComponent } from './new-idea/new-idea.component';
 import { MyIdeaComponent } from './my-idea/my-idea.component';
 import { FormsModule } from '@angular/forms';
 import { PendingForAccepatanceComponent } from './pending-for-accepatance/pending-for-accepatance.component';
-
+import { ViewPendingIdeaComponent } from './view-pending-idea/view-pending-idea.component';
 
 @NgModule({
-  declarations: [ViewIdeaComponent, ViewAllIdeasComponent, NewIdeaComponent, MyIdeaComponent, PendingForAccepatanceComponent],
-  imports: [
-    CommonModule,
-    IdeaRoutingModule,
-    FormsModule
-  ]
+  declarations: [
+    ViewIdeaComponent,
+    ViewAllIdeasComponent,
+    NewIdeaComponent,
+    MyIdeaComponent,
+    PendingForAccepatanceComponent,
+    ViewPendingIdeaComponent,
+  ],
+  imports: [CommonModule, IdeaRoutingModule, FormsModule],
 })
-export class IdeaModule { }
+export class IdeaModule {}

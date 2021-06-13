@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user.model';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
     userName: '',
     password: '',
   };
-  users = [];
+  users: Array<User> = [];
   adminDetails = {
     userName: '',
     password: '',
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
   loginClicked() {
     const user = this.users.find(
       (ele) =>
-        ele.username === this.userlogin.userName &&
+        ele.userName === this.userlogin.userName &&
         ele.password === this.userlogin.password
     );
     const isAdminUser =

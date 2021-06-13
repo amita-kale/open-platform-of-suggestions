@@ -43,11 +43,11 @@
         routerLinkActive="active-link">
         Rating
       </div>
-      <div *ngIf="user?.role !== roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
+      <div *ngIf="user?.role === roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
         [routerLink]="['/department/table']" routerLinkActive="active-link">
         Department
       </div>
-      <div *ngIf="user?.role !== roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
+      <div *ngIf="user?.role === roles?.adminRole" class="border col-12 p-4 text-center cursor-pointer menu-hover"
         [routerLink]="['/user/user']" routerLinkActive="active-link">
         User
       </div>

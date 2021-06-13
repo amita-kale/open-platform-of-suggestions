@@ -8,10 +8,10 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   postUser(user) {
-    return this.httpClient.post('http://localhost:3000/user', user);
+    return this.httpClient.post('http://localhost:3000/users', user);
   }
   getUsers() {
-    return this.httpClient.get('http://localhost:3000/user');
+    return this.httpClient.get('http://localhost:3000/users');
   }
   getAdminDetails() {
     return this.httpClient.get('http://localhost:3000/admin');
