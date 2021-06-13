@@ -12,15 +12,16 @@
   "statuses": {
     "underEvaluation": "Under Evaluation",
     "ideaAlreadyExists": "Idea Already Exists",
+    "notAcceptedForImplementation": "Not Accepted For Implementation",
     "acceptedByTeacher": "Accepted By Teacher",
-    "acceptedByHOD": "Accepted By HOD",
     "acceptedForImplementation": "Accepted For Implementation",
     "implemented": "Implemented"
   },
   "roles": {
     "studentRole": "Student",
     "teacherRole": "Teacher",
-    "hodRole": "HOD"
+    "hodRole": "HOD",
+    "adminRole": "Admin"
   },
   "ideas": [
     {

@@ -7,43 +7,42 @@
 </div>
 <div class="row mt-3 mx-0 text-center">
   <div class="col-2">
-    <div class="border p-5 cursor-pointer under-evaluation"
+    <div class="border py-4 px-2 cursor-pointer under-evaluation"
       [ngClass]="{'border-2-black': selectedStatus === statuses?.underEvaluation}"
       (click)="statusClicked(statuses?.underEvaluation)">
       {{statuses?.underEvaluation}}
     </div>
   </div>
   <div class="col-2">
-    <div class="border p-5 cursor-pointer idea-already-exist"
+    <div class="border py-4 px-2 cursor-pointer idea-already-exist"
       [ngClass]="{'border-2-black': selectedStatus === statuses?.ideaAlreadyExists}"
       (click)="statusClicked(statuses?.ideaAlreadyExists)">
       {{statuses?.ideaAlreadyExists}}
     </div>
   </div>
   <div class="col-2">
-    <div class="border p-5 cursor-pointer accepted-for-implementation"
+    <div class="border py-4 px-2 cursor-pointer implemented"
+      [ngClass]="{'border-2-black': selectedStatus === statuses?.notAcceptedForImplementation}"
+      (click)="statusClicked(statuses?.notAcceptedForImplementation)">
+      {{statuses?.notAcceptedForImplementation}}
+    </div>
+  </div>
+  <div class="col-2">
+    <div class="border py-4 px-2 cursor-pointer accepted-for-implementation"
       [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedByTeacher}"
       (click)="statusClicked(statuses?.acceptedByTeacher)">
       {{statuses?.acceptedByTeacher}}
     </div>
   </div>
-
   <div class="col-2">
-    <div class="border p-5 cursor-pointer implemented"
-      [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedByHOD}"
-      (click)="statusClicked(statuses?.acceptedByHOD)">
-      {{statuses?.acceptedByHOD}}
-    </div>
-  </div>
-  <div class="col-2">
-    <div class="border p-5 cursor-pointer implemented"
+    <div class="border py-4 px-2 cursor-pointer implemented"
       [ngClass]="{'border-2-black': selectedStatus === statuses?.acceptedForImplementation}"
       (click)="statusClicked(statuses?.acceptedForImplementation)">
       {{statuses?.acceptedForImplementation}}
     </div>
   </div>
   <div class="col-2">
-    <div class="border p-5 cursor-pointer implemented"
+    <div class="border py-4 px-2 cursor-pointer implemented"
       [ngClass]="{'border-2-black': selectedStatus === statuses?.implemented}"
       (click)="statusClicked(statuses?.implemented)">
       {{statuses?.implemented}}
