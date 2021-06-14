@@ -13,13 +13,22 @@ export class UserComponent implements OnInit {
   constructor(private coreService: CoreService, private router: Router) {}
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers() {
     this.coreService.getUsers().subscribe((users: Array<User>) => {
       this.users = users;
     });
   }
 
-  deleteFunction(i) {
-    // this.userService.delUser(i);
+  deleteClicked(id: number) {
+    const confirmed = confirm('Are you sure, you want to delete??');
+    if (confirmed) {
+      this.coreService.deleteUsers(id).subscribe((users: Array<User>) => {
+        this.getUsers();
+      });
+    }
   }
 
   editFunction(item) {

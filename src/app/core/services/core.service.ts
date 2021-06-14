@@ -20,6 +20,10 @@ export class CoreService {
     return this.httpClient.get('http://localhost:3000/users/');
   }
 
+  deleteUsers(id: number) {
+    return this.httpClient.delete('http://localhost:3000/users/' + id);
+  }
+
   getUser(id) {
     return this.httpClient.get('http://localhost:3000/users/' + id);
   }

@@ -2,9 +2,9 @@
   "statuses": {
     "underEvaluation": "Under Evaluation",
     "ideaAlreadyExists": "Idea Already Exists",
-    "notAcceptedForImplementation": "Not Accepted For Implementation",
+    "notAcceptedForImplementation": "Not Accepted For Imple",
     "acceptedByTeacher": "Accepted By Teacher",
-    "acceptedForImplementation": "Accepted For Implementation",
+    "acceptedForImplementation": "Accepted For Imple",
     "implemented": "Implemented"
   },
   "roles": {
@@ -223,20 +223,69 @@
         }
       },
       "id": 7
+    },
+    {
+      "title": "Test 1 idea for computer",
+      "description": "Test 1 idea for computer",
+      "benefits": "Test 1 idea for computer",
+      "likes": null,
+      "createdOn": "2021-06-14T04:34:21.404Z",
+      "status": "Under Evaluation",
+      "departmentId": "1",
+      "departmentName": "Computer",
+      "authorId": 3,
+      "authorName": "Rutika Jadhav",
+      "actions": {
+        "teacher": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "hod": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        },
+        "admin": {
+          "id": "",
+          "comment": "",
+          "date": ""
+        }
+      },
+      "id": 8
+    },
+    {
+      "title": "Test 1 idea for civil",
+      "description": "Test 1 idea for civil",
+      "benefits": "Test 1 idea for civil",
+      "likes": null,
+      "createdOn": "2021-06-14T04:34:40.036Z",
+      "status": "Implemented",
+      "departmentId": "4",
+      "departmentName": "Civil",
+      "authorId": 3,
+      "authorName": "Rutika Jadhav",
+      "actions": {
+        "teacher": {
+          "id": "4",
+          "comment": "Good. Please HOD accept this.",
+          "date": "2021-06-14T04:37:13.180Z"
+        },
+        "hod": {
+          "id": "5",
+          "comment": "Accepted. Admin accept this.",
+          "date": "2021-06-14T04:43:30.397Z"
+        },
+        "admin": {
+          "id": "0",
+          "comment": "Implemented",
+          "date": "2021-06-14T04:44:54.760Z"
+        }
+      },
+      "id": 9
     }
   ],
   "users": [
-    {
-      "id": 0,
-      "firstName": "Admin",
-      "lastName": "",
-      "gender": "",
-      "role": "Admin",
-      "userName": "admin",
-      "password": "admin",
-      "departmentId": "0",
-      "departmentName": ""
-    },
     {
       "id": 1,
       "firstName": "Aniket",
@@ -269,6 +318,28 @@
       "departmentId": "1",
       "departmentName": "Computer",
       "id": 3
+    },
+    {
+      "firstName": "Manish",
+      "lastName": "Kewat",
+      "gender": "Male",
+      "role": "Teacher",
+      "userName": "manish",
+      "password": "manish",
+      "departmentId": "4",
+      "departmentName": "Civil",
+      "id": 4
+    },
+    {
+      "firstName": "Monika",
+      "lastName": "Kamalpure",
+      "gender": "Female",
+      "role": "HOD",
+      "userName": "monika",
+      "password": "monika",
+      "departmentId": "4",
+      "departmentName": "Civil",
+      "id": 5
     }
   ],
   "departments": [
